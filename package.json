@@ -1,0 +1,28 @@
+{
+  "name": "makr-css",
+  "version": "1.0.0",
+  "description": "A responsive and modular css base for fast and consistent starts to yuor projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embeeML/makr.css.git"
+  },
+  "keywords": [
+    "css",
+    "css",
+    "framework",
+    "css",
+    "boilerplate",
+    "casic",
+    "css"
+  ],
+  "author": "Matthew Boyles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/embeeML/makr.css/issues"
+  },
+  "homepage": "https://github.com/embeeML/makr.css#readme"
+}

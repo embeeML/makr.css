@@ -6,10 +6,6 @@ I would love for you to contribute to makr.css and help me craft this even bette
 
 - [Open an Issue](#open-an-issue)
 - [Submit a Pull Request](#submit-a-pull-request)
-- [Building](#building)
-- [Style Guide](#style-guide)
-- [Test](#test)
-- [Code of Conduct](#code-of-conduct)
 - [License](#license)
 
 ## Open an Issue

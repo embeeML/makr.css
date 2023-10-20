@@ -3,6 +3,9 @@
 
 ![Discord](https://img.shields.io/discord/1164754785946312754)
 
+![GitHub all releases](https://img.shields.io/github/downloads/embeeML/makr.css/total)
+
+
 
 Light and Modular CSS files that give you a fast and consistent start on your projects. 
 

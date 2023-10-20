@@ -16,6 +16,6 @@ or
 **Install with npm**
 
 ```sh
-$ npm install makr.css
+npm i @matthew.b/makr-css
 ```
 

@@ -1,0 +1,108 @@
+/* ------------------------------------------------------------- *
+ * Forms
+/* ------------------------------------------------------------- */
+
+.form-control {
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	padding: 5px 15px;
+	font-size: 17px;
+	font-weight: normal;
+	color: var(--text);
+	border: 1px solid rgb(136 136 136 / 65%);
+	border-radius: 3px;
+}
+.form-control:focus {
+	color: var(--text-light);
+	background-color: transparent;
+	border-color: var(--accent)
+	
+}
+.form-control + .form-control {
+	margin-top: 20px;
+}
+.form-control:disabled, .form-control[readonly] {
+	background-color: var(--disabled);
+	opacity: .4;
+	cursor: not-allowed;
+}
+
+.form-control:not(textarea):not([size]) { /* tt-form-control height */
+	height: 56px;
+}
+
+.form-text {
+	display: block;
+	margin-top: 5px;
+	font-style: italic;
+	color: var(--text);
+}
+
+label {
+	display: inline-block;
+	margin-bottom: 8px;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+::-webkit-input-placeholder {
+	color: var(--text-light) !important;
+}
+:-moz-placeholder {
+	color: var(--text-light) !important;
+}
+::-moz-placeholder {
+	color: var(--text-light) !important;
+}
+:-ms-input-placeholder {
+	color: var(--text-light) !important;
+}
+
+/* form group */
+.form-group {
+	margin-bottom: 30px;
+}
+
+/* checkbox/radio */
+input[type=checkbox], 
+input[type=radio] {
+	box-sizing: border-box;
+	padding: 0;
+	cursor: pointer;
+}
+
+/* textarea */
+textarea,
+textarea.form-control {
+	padding: 15px
+}
+
+/* select */
+select {
+	cursor: pointer;
+}
+select option {
+	background-color: var(--bg);
+	color: var(--accent);
+}
+select option[value=""][disabled] {
+  display: none;
+}
+select[multiple] option {
+	background-color: transparent;
+	color: var(--accent);
+}
+select option[disabled],
+select[multiple] option[disabled] {
+	color: var(--text-light);
+}
+select:required:invalid {
+	color: var(--text-light)
+}
+
+/* range slider */
+input[type=range] {
+	width: 100%;
+}
+

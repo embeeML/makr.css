@@ -1,0 +1,141 @@
+/*
+* Base CSS
+*Typography Classes
+*/
+
+
+
+.h1 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+	font-weight: 600;
+	color: inherit;
+  line-height: 1.4;
+	margin-top: 0px;
+	margin-bottom: 30px;
+  line-height: 1.4;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.h2 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+	font-weight: 600;
+	color: inherit;
+  line-height: 1.4;
+	margin-top: 0px;
+	margin-bottom: 30px;
+  line-height: 1.4;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.h3 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+	font-weight: 600;
+	color: inherit;
+  line-height: 1.4;
+	margin-top: 0px;
+	margin-bottom: 30px;
+  line-height: 1.4;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.h4 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+	font-weight: 600;
+	color: inherit;
+  line-height: 1.4;
+	margin-top: 0px;
+	margin-bottom: 30px;
+  line-height: 1.4;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.h5 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+	font-weight: 600;
+	color: inherit;
+  line-height: 1.4;
+	margin-top: 0px;
+	margin-bottom: 30px;
+  line-height: 1.4;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.h6 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+	font-weight: 600;
+	color: inherit;
+  line-height: 1.4;
+	margin-top: 0px;
+	margin-bottom: 30px;
+  line-height: 1.4;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+/* heading classes */
+
+.heading {
+  margin-bottom: 40px
+}
+@media (max-width: 991px) {
+  .heading {
+    margin-bottom: 30px;
+  }
+}
+
+.heading-title {
+  margin: 0;
+  font-size: calc(24px + 1vh);
+  font-weight: bold;
+  font-weight: 600;
+  color: var(--main-font-color);
+}
+
+.heading-divider-txt {
+  margin: 0;
+	font-size: calc(64px + 1vw);
+	font-weight: bold;
+	font-weight: 500;
+	color: var(--main-font-color);
+}
+
+.heading-subtitle {
+  margin: 0 0 15px 0;
+	font-size: calc(19px + 0.1vw);
+	font-weight: bold;
+	font-weight: normal;
+	color: var(--main-sub-font-color);
+}
+
+.heading-title + .heading-subtitle {
+  margin: 15px 0 0 0;
+}
+
+.heading > p:first-child {
+	margin-bottom: 0;
+}
+.heading-title + p,
+.heading-subtitle + p {
+	margin-top: 50px;
+}
+.heading > p:last-child {
+	margin-bottom: 0;
+}
+

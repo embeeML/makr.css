@@ -5,4 +5,17 @@ The aim of makr.css is to give foundational stability to the core of your projec
 
 makr.css is there to provide your project balance and stability and stay out of the way while you design and style your work. 
 
+Get started:
+
+Download the files from the git repository:
+
+https://github.com/embeeML/makr.css
+
+or
+
+**Install with npm**
+
+```sh
+$ npm install makr.css
+```
 

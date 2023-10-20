@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/embeeML/makr.css/issues"
   },
-  "homepage": "https://github.com/embeeML/makr.css#readme"
+  "homepage": "https://github.com/embeeML/makr.css#readme",
   "publishConfig": {
     "@atthew.b:registry": "https://npm.pkg.github.com"
   }

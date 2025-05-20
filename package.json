@@ -1,0 +1,17 @@
+{
+  "name": "mbm-base-css",
+  "version": "1.0.0",
+  "description": "Small css base stylesheet",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [
+    "css",
+    "front-end",
+    "fraework",
+    "static-web"
+  ],
+  "author": "Matthew Boyles",
+  "homepage": "https://embeemedialab.com/",
+  "license": "ISC"
+}

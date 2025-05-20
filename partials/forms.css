@@ -1,0 +1,121 @@
+/*-----
+* 
+* forms stylesheet
+* by Matthew Boyles
+* https://www.embeemedialab.com
+* Updated 5/23/2025
+* 
+-----*/
+:root {
+  --primary: #cc3535; 
+  --secondary: #340000;
+  --accent: #f00;
+
+	--gray: #5a5e67;
+  --white: #f8f8f8;
+  --white-2: #fdf0d5;
+  --black: #121212;
+
+  --heading: "Inter", system-ui, sans-serif;
+  --heading-color: #000;
+  --heading-weight: 600;
+
+  --font: "Open Sans", system-ui, sans-serif;
+  --font-color: #121212;
+  --font-light: #454545;
+  --font-weight: 400;
+
+  --bg-color: #fff;
+  --alt-bg: #454545;
+
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 14px;
+  --disabled: #1e1e1e;
+}
+.form-control {
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	padding: 5px 15px;
+	font-size: 17px;
+	font-weight: normal;
+	color: var(--font-color);
+	border: 1px solid rgb(136 136 136 / 65%);
+	border-radius: 3px;
+}
+.form-control:focus {
+	color: var(--font-light);
+	background-color: transparent;
+	border-color: var(--accent);
+}
+.form-control + .form-control {
+	margin-top: 20px;
+}
+.form-control:disabled,
+.form-control[readonly] {
+	background-color: var(--disabled);
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+.form-control:not(textarea):not([size]) {
+	height: 56px;
+}
+.form-text {
+	display: block;
+	margin-top: 5px;
+	font-style: italic;
+	color: var(--font-color);
+}
+label {
+	display: inline-block;
+	margin-bottom: 8px;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+	color: var(--font-light) !important;
+}
+.form-group {
+	margin-bottom: 30px;
+}
+input[type=checkbox],
+input[type=radio] {
+	box-sizing: border-box;
+	padding: 0;
+	cursor: pointer;
+}
+textarea,
+textarea.form-control {
+	padding: 15px;
+}
+select {
+	cursor: pointer;
+}
+select option {
+	background-color: var(--bg-color);
+	color: var(--accent);
+}
+select option[value=""][disabled] {
+	display: none;
+}
+select[multiple] option {
+	background-color: transparent;
+	color: var(--accent);
+}
+select option[disabled],
+select[multiple] option[disabled] {
+	color: var(--font-light);
+}
+select:required:invalid {
+	color: var(--font-light);
+}
+
+/* Range Sliders */
+input[type=range] {
+	width: 100%;
+}

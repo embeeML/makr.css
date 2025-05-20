@@ -1,0 +1,32 @@
+/*-----
+* 
+* utility classes and helper
+* by Matthew Boyles
+* https://www.embeemedialab.com
+* Updated 5/23/2025
+* 
+-----*/
+:root{
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 14px;
+}
+/*---
+* component utilities
+---*/
+.shadow {
+  box-shadow: var(--box-shadow) !important;
+}
+.shadow-none {
+  box-shadow: none !important;
+}
+.rounded {
+  border-radius: var(--border-radius);
+}
+.rounded-lg {
+  border-radius: var(--border-radius-lg);
+}
+.rounded-sm {
+  border-radius: var(--border-radius-sm);
+}

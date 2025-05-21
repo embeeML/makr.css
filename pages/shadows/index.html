@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Shadows</title>
+  <link rel="stylesheet" href="/base.css">
+  <link rel="stylesheet" href="/pages/shadows/shadows.css">
+</head>
+<body>
+  <header class="mbm-pages">
+    <div class="container-header">
+      <div class="logo">MBM-Pages: CSS Shadows</div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Github</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container-header justify-content-center">
+      <h1 class="title">CSS Shadows and Examples</h1> 
+    </div>
+    <div class="container-header justify-content-center">
+      <p>Try out some of these box shadows and use in your own projects.</p>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container">
+      <div class="row box-row">
+        <div class="col-md-4">
+          <div class="shadow-box shadow-1" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 1<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-2" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 2<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-3" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 3<br><small>(click to copy)</small>
+          </div>
+        </div>
+      </div>
+      <div class="row box-row">
+        <div class="col-md-4">
+          <div class="shadow-box shadow-4" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 4<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-5" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 5<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-6" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 6<br><small>(click to copy)</small>
+          </div>
+        </div>
+      </div>
+      <div class="row box-row" style="padding-bottom: 50px;">
+        <div class="col-md-4">
+          <div class="shadow-box shadow-7" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 7<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-8" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 8<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-9" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 9<br><small>(click to copy)</small>
+          </div>
+        </div>
+      </div>
+      <div class="row box-row">
+        <div class="col-md-4">
+          <div class="shadow-box shadow-10" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 10<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-11" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 11<br><small>(click to copy)</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shadow-box shadow-12" data-css="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            Shadow 12<br><small>(click to copy)</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    
+      <a href="https://www.embeemedialab.com" style="text-align: center; color:#cc3535">Matthew Boyles</a> 2025
+
+  </section>
+  <div class="copy-alert" id="copyAlert">Copied to clipboard!</div>
+
+<script>
+    const boxes = document.querySelectorAll('.shadow-box');
+    const alert = document.getElementById('copyAlert');
+
+    boxes.forEach(box => {
+      box.addEventListener('click', () => {
+        const css = box.getAttribute('data-css');
+        navigator.clipboard.writeText(css).then(() => {
+          alert.classList.add('show');
+          setTimeout(() => alert.classList.remove('show'), 1500);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

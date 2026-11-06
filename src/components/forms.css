@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Embee CSS — Forms
+   <div class="form-group">
+     <label class="form-label" for="email">Email <span class="required">*</span></label>
+     <input class="form-control" id="email" type="email">
+     <p class="form-text">We'll never share it.</p>
+   </div>
+   ========================================================================== */
+
+.form-group { margin-bottom: var(--space-5); }
+
+label, .form-label {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+}
+label .required, .form-label .required { color: var(--color-danger); }
+
+.form-control,
+.form-select {
+  display: block;
+  width: 100%;
+  min-height: var(--input-height);
+  padding: 0.6em var(--input-padding-x);
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--input-border);
+  border-radius: var(--input-radius);
+  font-size: var(--text-base);
+  line-height: 1.4;
+  appearance: none;
+  transition: border-color var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
+}
+.form-control::placeholder { color: var(--color-text-muted); opacity: 0.8; }
+.form-control:hover, .form-select:hover { border-color: var(--color-text-muted); }
+.form-control:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+.form-control:disabled, .form-control[readonly],
+.form-select:disabled {
+  background-color: var(--color-surface-2);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+textarea.form-control { min-height: 9rem; padding-block: 0.8em; }
+
+/* Select with a chevron (works in light + dark) */
+.form-select, select.form-control {
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23888' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 0.85rem;
+  cursor: pointer;
+}
+select option { background-color: var(--color-bg); color: var(--color-text); }
+
+/* Sizes */
+.form-control-sm { --input-height: 2.25rem; font-size: var(--text-sm); }
+.form-control-lg { --input-height: 3.75rem; font-size: var(--text-lg); }
+
+/* Help + validation */
+.form-text { margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-muted); }
+.form-control.is-invalid, .form-control:user-invalid { border-color: var(--color-danger); }
+.form-control.is-valid { border-color: var(--color-success); }
+.invalid-feedback { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--color-danger); }
+
+/* Checkboxes, radios, switches, range */
+input[type="checkbox"], input[type="radio"], input[type="range"] { accent-color: var(--color-primary); }
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.form-check input { flex-shrink: 0; width: 1.15em; height: 1.15em; margin-top: 0.3em; }
+.form-check label { margin: 0; font-weight: var(--font-weight-normal); font-size: var(--text-base); }
+.form-check-inline { display: inline-flex; margin-right: var(--space-5); }
+input[type="range"] { width: 100%; }
+
+/* Toggle switch: <input type="checkbox" class="form-switch"> */
+.form-switch {
+  appearance: none;
+  position: relative;
+  width: 2.6em !important;
+  height: 1.5em !important;
+  margin-top: 0.1em !important;
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+.form-switch::after {
+  content: "";
+  position: absolute;
+  top: 0.2em;
+  left: 0.2em;
+  width: 1.1em;
+  height: 1.1em;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration) var(--ease);
+}
+.form-switch:checked { background: var(--color-primary); }
+.form-switch:checked::after { transform: translateX(1.1em); }
+
+/* Input + button side by side */
+.input-group { display: flex; align-items: stretch; }
+.input-group > .form-control { flex: 1 1 auto; min-width: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.input-group > .btn { border-top-left-radius: 0; border-bottom-left-radius: 0; min-height: var(--input-height); }
+
+fieldset { min-width: 0; margin: 0 0 var(--space-6); padding: 0; border: 0; }
+legend { margin-bottom: var(--space-3); font-weight: var(--font-weight-semibold); font-size: var(--text-lg); }
+
+/* Minimal underline style (from mbm.styles .form-minimal) */
+.form-minimal .form-control {
+  padding-inline: 0;
+  border-width: 0 0 var(--border-width);
+  border-radius: 0;
+  background-color: transparent;
+}
+.form-minimal .form-control:focus { box-shadow: 0 1px 0 0 var(--color-primary); }

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Embee CSS — Layout
+   1. Containers & sections
+   2. 12-column grid (base — column classes are in generated/grid.css)
+   3. Layout primitives (CSS Grid / flex patterns that need fewer classes)
+   ========================================================================== */
+
+/* ---- 1. Containers ----------------------------------------------------- */
+.container,
+.container-narrow,
+.container-wide,
+.container-fluid,
+.wrap {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+.container, .wrap   { max-width: calc(var(--container-max) + var(--container-padding) * 2); }
+.container-narrow   { max-width: calc(var(--container-narrow) + var(--container-padding) * 2); }
+.container-wide     { max-width: calc(var(--container-wide) + var(--container-padding) * 2); }
+/* .container-fluid = full width with side padding */
+
+/* Nested containers don't double the padding */
+:is(.container, .container-narrow, .container-wide, .container-fluid, .wrap)
+  :is(.container, .container-narrow, .container-wide, .container-fluid, .wrap) {
+  padding-inline: 0;
+}
+
+/* Sections: consistent, fluid vertical rhythm */
+.section    { padding-block: var(--space-section); }
+.section-sm { padding-block: var(--space-section-sm); }
+.section-lg { padding-block: var(--space-section-lg); }
+.section-flush-top    { padding-top: 0; }
+.section-flush-bottom { padding-bottom: 0; }
+
+/* ---- 2. Grid (Bootstrap-compatible, gap driven by variables) ---------
+   <div class="row">            gutter = --grid-gutter
+   <div class="row g-0">        no gutters   (old .no-gutters also works)
+   <div class="row gx-6 gy-4">  separate horizontal / vertical gutters
+   -------------------------------------------------------------------- */
+.row {
+  --gutter-x: var(--grid-gutter);
+  --gutter-y: 0px;
+  /* horizontal gutter never exceeds the container's side padding x2, so a
+     big gutter (g-8) can't push the page sideways on phones */
+  --_gx: min(var(--gutter-x), var(--container-padding) * 2);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--gutter-y) * -1);
+  margin-right: calc(var(--_gx) * -0.5);
+  margin-left: calc(var(--_gx) * -0.5);
+}
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--_gx) * 0.5);
+  padding-left: calc(var(--_gx) * 0.5);
+  margin-top: var(--gutter-y);
+}
+.no-gutters { --gutter-x: 0px; --gutter-y: 0px; }
+
+/* ---- 3. Layout primitives --------------------------------------------
+   These handle most layouts with ONE class and no breakpoints — they
+   adapt to the space available.
+   -------------------------------------------------------------------- */
+
+/* .stack — vertical spacing between children
+   <div class="stack" style="--stack-space: var(--space-6)"> */
+.stack { display: flex; flex-direction: column; justify-content: flex-start; }
+.stack > * { margin-block: 0; }
+.stack > * + * { margin-block-start: var(--stack-space, var(--space-5)); }
+.stack-sm { --stack-space: var(--space-3); }
+.stack-lg { --stack-space: var(--space-8); }
+
+/* .cluster — inline items that wrap (buttons, tags, nav, logos) */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: var(--cluster-align, center);
+  justify-content: var(--cluster-justify, flex-start);
+  gap: var(--cluster-space, var(--space-4));
+}
+
+/* .auto-grid — responsive card grid, no breakpoints needed.
+   Columns appear/disappear based on --auto-grid-min.
+   <div class="auto-grid" style="--auto-grid-min: 18rem"> */
+.auto-grid {
+  display: grid;
+  gap: var(--auto-grid-gap, var(--grid-gutter));
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--auto-grid-min, 16rem), 100%), 1fr));
+}
+.auto-grid-fill { grid-template-columns: repeat(auto-fill, minmax(min(var(--auto-grid-min, 16rem), 100%), 1fr)); }
+
+/* .with-sidebar — sidebar + main that stacks when narrow.
+   First child = sidebar. Add .sidebar-right to put the sidebar last. */
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap, var(--space-8));
+}
+.with-sidebar > :first-child {
+  flex-basis: var(--sidebar-width, 18rem);
+  flex-grow: 1;
+}
+.with-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-content-min, 55%);
+}
+.with-sidebar.sidebar-right > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-content-min, 55%);
+}
+.with-sidebar.sidebar-right > :last-child {
+  flex-basis: var(--sidebar-width, 18rem);
+  flex-grow: 1;
+  min-inline-size: 0;
+}
+
+/* .switcher — side by side until the container is narrower than
+   --switcher-at, then all items stack at once. Great for 2–4 feature cols. */
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, var(--grid-gutter));
+}
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-at, 40rem) - 100%) * 999);
+}
+
+/* .center — centered column with a readable max width */
+.center {
+  box-sizing: content-box;
+  max-inline-size: var(--measure);
+  margin-inline: auto;
+}
+.center-text { text-align: center; }
+
+/* .split — two ends of a row (logo / nav, title / button) */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/* .full-bleed — break out of a container to the viewport edges */
+.full-bleed {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}

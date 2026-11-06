@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embee CSS — Kitchen Sink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700;800&display=swap">
+<link rel="stylesheet" href="../dist/embee.css">
+<link rel="stylesheet" href="../dist/presets/mbm.css" id="preset-mbm" disabled>
+<style>
+  /* demo-only helpers */
+  .demo-bar { position: sticky; top: 0; z-index: var(--z-sticky); background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+  .demo-box { padding: var(--space-4); background: var(--color-primary-soft); border: 1px dashed var(--color-primary); border-radius: var(--radius-sm); font-size: var(--text-sm); text-align: center; }
+  .swatch { height: 4.5rem; border-radius: var(--radius); border: 1px solid var(--color-border); }
+  .type-row { display: grid; grid-template-columns: 6rem 1fr; gap: var(--space-4); align-items: baseline; padding-block: var(--space-2); border-bottom: 1px solid var(--color-border); }
+  .type-row code { font-size: var(--text-xs); }
+  #vw { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="demo-bar">
+  <div class="container split" style="padding-block: var(--space-3)">
+    <strong>Embee CSS <span class="badge badge-soft">v1.0.0</span></strong>
+    <div class="cluster" style="--cluster-space: var(--space-2)">
+      <span class="fs-xs text-muted">viewport <span id="vw"></span>px</span>
+      <button class="btn btn-sm btn-outline" data-set-theme="light">Light</button>
+      <button class="btn btn-sm btn-outline" data-set-theme="dark">Dark</button>
+      <button class="btn btn-sm btn-outline" data-set-theme="mbm">MBM preset</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="section-lg">
+  <div class="container">
+    <span class="eyebrow">Base framework</span>
+    <h1 class="display-1 measure">Build every site from one solid base.</h1>
+    <p class="lead measure">Tokens for every color, a fluid type scale that scales smoothly from phone to desktop, a Bootstrap-compatible grid and a handful of modern layout primitives.</p>
+    <div class="cluster mt-6">
+      <a class="btn btn-primary btn-lg" href="#"><span data-hover="Get started">Get started</span></a>
+      <a class="btn btn-primary-outline btn-lg" href="#">Documentation</a>
+      <a class="btn btn-link" href="#">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section class="section-sm bg-surface">
+  <div class="container">
+    <div class="heading heading-sm"><h2 class="heading-title">Color tokens</h2><p class="heading-subtitle">Change one variable, the whole site follows.</p></div>
+    <div class="auto-grid" style="--auto-grid-min: 8rem; --auto-grid-gap: var(--space-4)">
+      <div><div class="swatch" style="background:var(--color-primary)"></div><code>--color-primary</code></div>
+      <div><div class="swatch" style="background:var(--color-secondary)"></div><code>--color-secondary</code></div>
+      <div><div class="swatch" style="background:var(--color-accent)"></div><code>--color-accent</code></div>
+      <div><div class="swatch" style="background:var(--color-success)"></div><code>--color-success</code></div>
+      <div><div class="swatch" style="background:var(--color-warning)"></div><code>--color-warning</code></div>
+      <div><div class="swatch" style="background:var(--color-danger)"></div><code>--color-danger</code></div>
+      <div><div class="swatch" style="background:var(--color-bg)"></div><code>--color-bg</code></div>
+      <div><div class="swatch" style="background:var(--color-surface-2)"></div><code>--color-surface-2</code></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPE -->
+<section class="section">
+  <div class="container">
+    <div class="heading heading-sm"><h2 class="heading-title">Fluid type scale</h2><p class="heading-subtitle">Resize the window — every size grows smoothly between 320px and 1440px.</p></div>
+    <div class="type-row"><code>h1 / step-5</code><h1 class="mb-0">The quick brown fox</h1></div>
+    <div class="type-row"><code>h2 / step-4</code><h2 class="mb-0">The quick brown fox</h2></div>
+    <div class="type-row"><code>h3 / step-3</code><h3 class="mb-0">The quick brown fox</h3></div>
+    <div class="type-row"><code>h4 / step-2</code><h4 class="mb-0">The quick brown fox</h4></div>
+    <div class="type-row"><code>h5 / step-1</code><h5 class="mb-0">The quick brown fox</h5></div>
+    <div class="type-row"><code>h6 / step-0</code><h6 class="mb-0">The quick brown fox</h6></div>
+    <div class="type-row"><code>body</code><p class="mb-0">Body copy at <code>--text-base</code>. Good typography is invisible.</p></div>
+    <div class="type-row"><code>small</code><p class="mb-0 small">Small text at <code>--text-sm</code>, for captions and meta.</p></div>
+
+    <div class="row g-8 mt-8">
+      <div class="col-md-7">
+        <div class="prose">
+          <h3>Long-form content</h3>
+          <p>Wrap CMS output in <code>.prose</code> and it gets a readable line length, steady vertical rhythm and <a href="#">underlined links</a>. Works great with Statamic Bard fields.</p>
+          <ul><li>Lists get sensible spacing</li><li>Nested items too<ul><li>Like this one</li></ul></li></ul>
+          <blockquote>Design is not just what it looks like. Design is how it works.<footer>Someone wise</footer></blockquote>
+          <p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save. <mark>Highlighted text</mark> stands out.</p>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <pre><code>:root {
+  --color-primary: #cc3535;
+  --font-heading: "Urbanist";
+  --type-base-max: 1.1875;
+  --type-ratio-max: 1.333;
+}</code></pre>
+        <p class="text-muted fs-sm">That's a complete re-skin of the whole framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRID -->
+<section class="section bg-surface">
+  <div class="container">
+    <div class="heading heading-sm"><h2 class="heading-title">Grid</h2><p class="heading-subtitle">Same class names as before, now with working gutters.</p></div>
+    <div class="row gy-4">
+      <div class="col-md-4"><div class="demo-box">.col-md-4</div></div>
+      <div class="col-md-4"><div class="demo-box">.col-md-4</div></div>
+      <div class="col-md-4"><div class="demo-box">.col-md-4</div></div>
+      <div class="col-sm-6 col-lg-3"><div class="demo-box">.col-sm-6 .col-lg-3</div></div>
+      <div class="col-sm-6 col-lg-3"><div class="demo-box">.col-sm-6 .col-lg-3</div></div>
+      <div class="col-lg-6"><div class="demo-box">.col-lg-6</div></div>
+      <div class="col-md-8 offset-md-2"><div class="demo-box">.col-md-8 .offset-md-2</div></div>
+    </div>
+
+    <h3 class="h4 mt-9">Layout primitives</h3>
+    <p class="text-muted">No breakpoints needed — they adapt to the space they have.</p>
+    <h4 class="h6 mt-6">.auto-grid</h4>
+    <div class="auto-grid" style="--auto-grid-min: 12rem">
+      <div class="demo-box">1</div><div class="demo-box">2</div><div class="demo-box">3</div><div class="demo-box">4</div><div class="demo-box">5</div>
+    </div>
+    <h4 class="h6 mt-6">.with-sidebar</h4>
+    <div class="with-sidebar" style="--sidebar-width: 14rem; --sidebar-gap: var(--space-5)">
+      <div class="demo-box">sidebar</div>
+      <div class="demo-box">main content</div>
+    </div>
+    <h4 class="h6 mt-6">.switcher</h4>
+    <div class="switcher" style="--switcher-at: 44rem">
+      <div class="demo-box">A</div><div class="demo-box">B</div><div class="demo-box">C</div>
+    </div>
+    <h4 class="h6 mt-6">.cluster</h4>
+    <div class="cluster">
+      <span class="tag">Laravel</span><span class="tag">Statamic</span><span class="tag">WHMCS</span><span class="tag">cPanel</span><span class="tag">Tailwind-free</span>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="section">
+  <div class="container">
+    <div class="heading heading-center heading-lg"><span class="eyebrow">Components</span><h2 class="heading-title">Cards</h2><p class="heading-subtitle">Default, hover lift, outline and glass.</p></div>
+    <div class="auto-grid" style="--auto-grid-min: 16rem">
+      <article class="card card-hover">
+        <div class="card-media" style="background: linear-gradient(135deg, var(--color-primary), var(--color-accent))"></div>
+        <div class="card-body">
+          <span class="eyebrow">Case study</span>
+          <h3 class="card-title"><a class="stretched-link" href="#">Brand refresh</a></h3>
+          <p class="card-text">Whole card is clickable via .stretched-link.</p>
+        </div>
+      </article>
+      <article class="card card-outline">
+        <div class="card-body">
+          <span class="badge badge-primary">New</span>
+          <h3 class="card-title mt-4">Outline card</h3>
+          <p class="card-text">Transparent background with a border.</p>
+        </div>
+        <div class="card-footer"><a class="btn btn-link" href="#">Read more</a></div>
+      </article>
+      <article class="card card-glass">
+        <div class="card-body">
+          <h3 class="card-title">Glass card</h3>
+          <p class="card-text">The mbm-card look from editions.css. Adapts to light and dark.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BUTTONS / BADGES / ALERTS -->
+<section class="section bg-surface">
+  <div class="container">
+    <div class="heading heading-sm"><h2 class="heading-title">Buttons, badges &amp; alerts</h2></div>
+    <div class="cluster">
+      <a class="btn btn-primary" href="#">Primary</a>
+      <a class="btn btn-secondary" href="#">Secondary</a>
+      <a class="btn btn-accent" href="#">Accent</a>
+      <a class="btn btn-primary-outline" href="#">Outline</a>
+      <a class="btn btn-outline" href="#">Outline (current)</a>
+      <a class="btn btn-ghost" href="#">Ghost</a>
+      <a class="btn btn-dark" href="#">Dark</a>
+      <a class="btn btn-primary btn-pill" href="#">Pill</a>
+      <a class="btn btn-primary btn-sm" href="#">Small</a>
+      <a class="btn btn-primary btn-round" href="#">Round</a>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+    <div class="cluster mt-6">
+      <span class="badge">Default</span><span class="badge badge-primary">Primary</span><span class="badge badge-soft">Soft</span><span class="badge badge-success">Success</span><span class="badge badge-warning">Warning</span><span class="badge badge-danger">Danger</span>
+    </div>
+    <div class="row g-4 mt-4">
+      <div class="col-md-6"><div class="alert alert-success"><strong>Saved.</strong> Your changes are live.</div></div>
+      <div class="col-md-6"><div class="alert alert-warning"><strong>Heads up.</strong> SSL renews in 7 days.</div></div>
+      <div class="col-md-6"><div class="alert alert-danger"><strong>Error.</strong> Payment failed.</div></div>
+      <div class="col-md-6"><div class="alert alert-info"><strong>FYI.</strong> Maintenance Sunday 2am.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMS + TABLE -->
+<section class="section">
+  <div class="container">
+    <div class="row g-8">
+      <div class="col-lg-5">
+        <div class="heading heading-sm"><h2 class="heading-title">Forms</h2></div>
+        <form>
+          <div class="form-group">
+            <label class="form-label" for="n">Name <span class="required">*</span></label>
+            <input class="form-control" id="n" placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="s">Service</label>
+            <select class="form-select" id="s"><option>Web design</option><option>Hosting</option></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="m">Message</label>
+            <textarea class="form-control" id="m" placeholder="Tell us about your project"></textarea>
+            <p class="form-text">We reply within one business day.</p>
+          </div>
+          <div class="form-check"><input type="checkbox" id="c" checked><label for="c">Subscribe to updates</label></div>
+          <div class="form-check"><input type="checkbox" class="form-switch" id="sw" checked><label for="sw">Toggle switch</label></div>
+          <div class="input-group mt-5"><input class="form-control" placeholder="Email"><button class="btn btn-primary" type="button">Join</button></div>
+        </form>
+      </div>
+      <div class="col-lg-7">
+        <div class="heading heading-sm"><h2 class="heading-title">Tables</h2></div>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead><tr><th>Plan</th><th>Storage</th><th>Sites</th><th>Price</th></tr></thead>
+            <tbody>
+              <tr><td>Starter</td><td>10 GB</td><td>1</td><td>$15/mo</td></tr>
+              <tr><td>Business</td><td>50 GB</td><td>5</td><td>$35/mo</td></tr>
+              <tr><td>Agency</td><td>200 GB</td><td>Unlimited</td><td>$79/mo</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCORDION + TABS -->
+<section class="section bg-surface">
+  <div class="container">
+    <div class="row g-8">
+      <div class="col-lg-6">
+        <div class="heading heading-sm"><h2 class="heading-title">Accordion</h2><p class="heading-subtitle">&lt;details&gt; — no JavaScript.</p></div>
+        <div class="accordion ac-borders">
+          <details class="accordion-item" name="faq" open><summary class="accordion-heading">Do I need a build step?</summary><div class="accordion-content"><p>No. Link dist/embee.min.css and override variables in your own CSS.</p></div></details>
+          <details class="accordion-item" name="faq"><summary class="accordion-heading">Does old markup still work?</summary><div class="accordion-content"><p>Yes — grid classes are the same, and embee-legacy.css covers the old helper classes.</p></div></details>
+          <details class="accordion-item" name="faq"><summary class="accordion-heading">How are versions handled?</summary><div class="accordion-content"><p>Each release is frozen in releases/vX.Y.Z and tagged in git.</p></div></details>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="heading heading-sm"><h2 class="heading-title">Tabs</h2><p class="heading-subtitle">Uses the optional embee.js.</p></div>
+        <div class="tabs tabs-minimal">
+          <div class="tabs-buttons"><ul>
+            <li><button class="tab-btn active" data-tab="t1">Design</button></li>
+            <li><button class="tab-btn" data-tab="t2">Build</button></li>
+            <li><button class="tab-btn" data-tab="t3">Host</button></li>
+          </ul></div>
+          <div class="tab-content active" id="t1"><p>Brand, UI and UX design.</p></div>
+          <div class="tab-content" id="t2"><p>Laravel &amp; Statamic development.</p></div>
+          <div class="tab-content" id="t3"><p>Managed cPanel hosting.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK SECTION + IMAGE COVER -->
+<section class="section-lg cover bg-image" style="--cover-opacity: .65; background-image: linear-gradient(120deg, #2b2b2b, #5a1f1f)" data-theme="dark">
+  <div class="container text-center">
+    <div class="heading heading-xlg heading-center"><h2 class="heading-title">A dark section inside a light page</h2><p class="heading-subtitle">Just add data-theme="dark" to any element.</p></div>
+    <a class="btn btn-light btn-lg" href="#"><span data-hover="Start a project">Start a project</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="section-sm">
+  <div class="container split">
+    <p class="mb-0 fs-sm text-muted">© Embee Media Lab</p>
+    <ul class="list-inline fs-sm mb-0"><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul>
+  </div>
+</footer>
+
+<script src="../dist/embee.js" defer></script>
+<script>
+  const html = document.documentElement, preset = document.getElementById('preset-mbm');
+  const vw = () => (document.getElementById('vw').textContent = innerWidth);
+  vw(); addEventListener('resize', vw);
+  document.querySelectorAll('[data-set-theme]').forEach((b) => b.addEventListener('click', () => {
+    const t = b.dataset.setTheme;
+    preset.disabled = t !== 'mbm';
+    html.dataset.theme = t === 'light' ? 'light' : 'dark';
+  }));
+  const q = new URLSearchParams(location.search).get('theme');
+  if (q) document.querySelector(`[data-set-theme="${q}"]`)?.click();
+</script>
+</body>
+</html>

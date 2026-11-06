@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Embee CSS — Section heading block (carried over from mbm.styles)
+   <div class="heading heading-lg">
+     <span class="eyebrow">Services</span>
+     <h2 class="heading-title">What we do</h2>
+     <p class="heading-subtitle">Design, build and hosting.</p>
+   </div>
+   Sizes: heading-xsm | heading-sm | (default) | heading-lg | heading-xlg | heading-xxlg
+   Mods:  heading-center | heading-stroke
+   ========================================================================== */
+
+.heading { margin-bottom: var(--space-8); }
+.heading > :last-child { margin-bottom: 0; }
+
+.heading-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--heading-title-size, var(--step-4));
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  color: var(--color-heading);
+  text-wrap: balance;
+}
+.heading-subtitle {
+  margin: 0 0 var(--space-4);
+  font-size: var(--heading-subtitle-size, var(--step-1));
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-snug);
+  color: var(--color-text-muted);
+}
+.heading-title + .heading-subtitle { margin: var(--space-4) 0 0; }
+.heading-title + p, .heading-subtitle + p { margin-top: var(--space-6); }
+
+.heading-xsm  { --heading-title-size: var(--step-2); --heading-subtitle-size: var(--step--1); }
+.heading-sm   { --heading-title-size: var(--step-3); --heading-subtitle-size: var(--step-0); }
+.heading-lg   { --heading-title-size: var(--step-5); --heading-subtitle-size: var(--step-1); }
+.heading-xlg  { --heading-title-size: var(--step-6); --heading-subtitle-size: var(--step-1); }
+.heading-xxlg { --heading-title-size: var(--step-7); --heading-subtitle-size: var(--step-2); }
+:is(.heading-lg, .heading-xlg, .heading-xxlg) .heading-title {
+  font-family: var(--font-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.heading-center { margin-inline: auto; text-align: center; }
+.heading-center .heading-subtitle { margin-inline: auto; max-width: var(--measure); }
+
+.heading-stroke .heading-title {
+  -webkit-text-stroke: 1px var(--color-heading, currentColor);
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--font-weight-bold);
+}

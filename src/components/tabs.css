@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Embee CSS — Tabs  (markup matches mbm.styles; needs addons/embee.js or
+   your theme JS to switch the .active class)
+   <div class="tabs tabs-minimal">
+     <div class="tabs-buttons"><ul>
+       <li><button class="tab-btn active" data-tab="t1">One</button></li>
+       <li><button class="tab-btn" data-tab="t2">Two</button></li>
+     </ul></div>
+     <div class="tab-content active" id="t1">…</div>
+     <div class="tab-content" id="t2">…</div>
+   </div>
+   ========================================================================== */
+
+.tabs { position: relative; }
+.tabs-buttons ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tabs-buttons li { margin: 0; }
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: var(--space-2) var(--space-6);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm);
+  text-align: center;
+  transition: background var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
+}
+.tab-btn:hover { background: var(--color-surface-2); color: var(--color-text); }
+.tab-btn.active, .tab-btn[aria-selected="true"] {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.tab-content { display: none; padding-top: var(--space-7); }
+.tab-content.active, .tab-content:target { display: block; }
+
+/* Minimal: underlined tabs */
+.tabs-minimal .tabs-buttons { border-bottom: var(--border-width) solid var(--color-border); }
+.tabs-minimal .tabs-buttons ul { gap: var(--space-7); }
+.tabs-minimal .tab-btn {
+  min-height: 3.5rem;
+  padding-inline: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: inset 0 -2px 0 transparent;
+}
+.tabs-minimal .tab-btn:hover { background: transparent; }
+.tabs-minimal .tab-btn.active,
+.tabs-minimal .tab-btn[aria-selected="true"] {
+  background: transparent;
+  color: var(--color-text);
+  box-shadow: inset 0 -2px 0 var(--color-primary);
+}
+
+/* Stack the buttons on small screens */
+@media (max-width: 575.98px) {
+  .tabs:not(.tabs-minimal) .tabs-buttons ul { flex-direction: column; }
+}

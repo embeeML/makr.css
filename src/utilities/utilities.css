@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Embee CSS — Utilities (non-responsive)
+   Responsive ones (d-md-none, mt-lg-6 …) are in generated/utilities.css.
+   Utilities use !important so they always win over component styles.
+   ========================================================================== */
+
+/* ---- Text color -------------------------------------------------------- */
+.text-primary   { color: var(--color-primary) !important; }
+.text-secondary { color: var(--color-secondary) !important; }
+.text-accent    { color: var(--color-accent) !important; }
+.text-success   { color: var(--color-success) !important; }
+.text-warning   { color: var(--color-warning) !important; }
+.text-danger    { color: var(--color-danger) !important; }
+.text-info      { color: var(--color-info) !important; }
+.text-body      { color: var(--color-text) !important; }
+.text-muted     { color: var(--color-text-muted) !important; }
+.text-white     { color: var(--color-white) !important; }
+.text-black     { color: var(--color-black) !important; }
+.text-inherit   { color: inherit !important; }
+
+/* ---- Background color -------------------------------------------------- */
+.bg-primary   { background-color: var(--color-primary) !important; color: var(--color-on-primary); }
+.bg-secondary { background-color: var(--color-secondary) !important; color: var(--color-on-secondary); }
+.bg-accent    { background-color: var(--color-accent) !important; color: var(--color-on-accent); }
+.bg-primary-soft { background-color: var(--color-primary-soft) !important; }
+.bg-success   { background-color: var(--color-success) !important; color: #fff; }
+.bg-warning   { background-color: var(--color-warning) !important; color: #1a1a1a; }
+.bg-danger    { background-color: var(--color-danger) !important; color: #fff; }
+.bg-info      { background-color: var(--color-info) !important; color: #fff; }
+.bg-body      { background-color: var(--color-bg) !important; }
+.bg-surface   { background-color: var(--color-surface) !important; }
+.bg-surface-2 { background-color: var(--color-surface-2) !important; }
+.bg-white     { background-color: var(--color-white) !important; }
+.bg-black     { background-color: var(--color-black) !important; }
+.bg-transparent { background-color: transparent !important; }
+
+/* Background images: <section class="bg-image" style="background-image:url(…)"> */
+.bg-image { background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; }
+.bg-image-fixed { background-attachment: fixed !important; }
+.bg-image-pattern { background-size: auto !important; background-repeat: repeat !important; }
+
+/* Dark overlay on top of an image: add .cover, tune with --cover-opacity */
+.cover { position: relative; isolation: isolate; }
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-overlay);
+  opacity: var(--cover-opacity, 1);
+  pointer-events: none;
+}
+
+/* ---- Typography -------------------------------------------------------- */
+.fs-xs   { font-size: var(--text-xs) !important; }
+.fs-sm   { font-size: var(--text-sm) !important; }
+.fs-base { font-size: var(--text-base) !important; }
+.fs-lg   { font-size: var(--text-lg) !important; }
+.fs-xl   { font-size: var(--text-xl) !important; }
+.fs-2xl  { font-size: var(--text-2xl) !important; }
+.fs-3xl  { font-size: var(--text-3xl) !important; }
+.fs-4xl  { font-size: var(--text-4xl) !important; }
+.fs-5xl  { font-size: var(--text-5xl) !important; }
+.fs-6xl  { font-size: var(--text-6xl) !important; }
+
+.font-body    { font-family: var(--font-body) !important; }
+.font-heading { font-family: var(--font-heading) !important; }
+.font-display { font-family: var(--font-display) !important; }
+.font-mono    { font-family: var(--font-mono) !important; }
+
+.fw-light    { font-weight: var(--font-weight-light) !important; }
+.fw-normal   { font-weight: var(--font-weight-normal) !important; }
+.fw-medium   { font-weight: var(--font-weight-medium) !important; }
+.fw-semibold { font-weight: var(--font-weight-semibold) !important; }
+.fw-bold     { font-weight: var(--font-weight-bold) !important; }
+.fst-italic  { font-style: italic !important; }
+.fst-normal  { font-style: normal !important; }
+
+.lh-1     { line-height: 1 !important; }
+.lh-tight { line-height: var(--line-height-tight) !important; }
+.lh-snug  { line-height: var(--line-height-snug) !important; }
+.lh-body  { line-height: var(--line-height-body) !important; }
+
+.ls-tight { letter-spacing: var(--letter-spacing-tight) !important; }
+.ls-wide  { letter-spacing: var(--letter-spacing-wide) !important; }
+.ls-caps  { letter-spacing: var(--letter-spacing-caps) !important; }
+
+.text-uppercase  { text-transform: uppercase !important; }
+.text-lowercase  { text-transform: lowercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+.text-no-transform { text-transform: none !important; }
+.text-underline  { text-decoration: underline !important; }
+.text-decoration-none { text-decoration: none !important; }
+.text-nowrap     { white-space: nowrap !important; }
+.text-balance    { text-wrap: balance !important; }
+.text-truncate   { overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+.measure         { max-width: var(--measure) !important; }
+
+/* Outline (stroked) text */
+.text-stroke {
+  -webkit-text-stroke: var(--text-stroke-width, 1px) var(--text-stroke-color, currentColor);
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Borders & radius -------------------------------------------------- */
+.border        { border: var(--border-width) solid var(--color-border) !important; }
+.border-top    { border-top: var(--border-width) solid var(--color-border) !important; }
+.border-bottom { border-bottom: var(--border-width) solid var(--color-border) !important; }
+.border-left, .border-start { border-left: var(--border-width) solid var(--color-border) !important; }
+.border-right, .border-end  { border-right: var(--border-width) solid var(--color-border) !important; }
+.border-0 { border: 0 !important; }
+.border-strong    { border-color: var(--color-border-strong) !important; }
+.border-primary   { border-color: var(--color-primary) !important; }
+.border-secondary { border-color: var(--color-secondary) !important; }
+.border-accent    { border-color: var(--color-accent) !important; }
+.border-white     { border-color: var(--color-white) !important; }
+.border-transparent { border-color: transparent !important; }
+.border-2 { border-width: 2px !important; }
+.border-dashed { border-style: dashed !important; }
+
+.rounded-0    { border-radius: 0 !important; }
+.rounded-sm   { border-radius: var(--radius-sm) !important; }
+.rounded      { border-radius: var(--radius) !important; }
+.rounded-lg   { border-radius: var(--radius-lg) !important; }
+.rounded-xl   { border-radius: var(--radius-xl) !important; }
+.rounded-full { border-radius: var(--radius-full) !important; }
+
+/* ---- Shadows & opacity ------------------------------------------------- */
+.shadow-none { box-shadow: none !important; }
+.shadow-sm   { box-shadow: var(--shadow-sm) !important; }
+.shadow      { box-shadow: var(--shadow) !important; }
+.shadow-lg   { box-shadow: var(--shadow-lg) !important; }
+
+.opacity-0   { opacity: 0 !important; }
+.opacity-25  { opacity: 0.25 !important; }
+.opacity-50  { opacity: 0.5 !important; }
+.opacity-75  { opacity: 0.75 !important; }
+.opacity-100 { opacity: 1 !important; }
+
+/* ---- Position, overflow, z-index -------------------------------------- */
+.position-static   { position: static !important; }
+.position-relative { position: relative !important; }
+.position-absolute { position: absolute !important; }
+.position-fixed    { position: fixed !important; }
+.position-sticky   { position: sticky !important; top: var(--sticky-top, 0); }
+.inset-0 { inset: 0 !important; }
+
+.overflow-hidden  { overflow: hidden !important; }
+.overflow-auto    { overflow: auto !important; }
+.overflow-visible { overflow: visible !important; }
+.overflow-x-auto  { overflow-x: auto !important; }
+.overflow-y-auto  { overflow-y: auto !important; }
+
+.z-0 { z-index: 0 !important; }
+.z-1 { z-index: 1 !important; }
+.z-2 { z-index: 2 !important; }
+.z-3 { z-index: 3 !important; }
+.z-sticky { z-index: var(--z-sticky) !important; }
+.z-modal  { z-index: var(--z-modal) !important; }
+
+/* ---- Sizing ------------------------------------------------------------ */
+.w-25   { width: 25% !important; }
+.w-50   { width: 50% !important; }
+.w-75   { width: 75% !important; }
+.w-100  { width: 100% !important; }
+.w-auto { width: auto !important; }
+.mw-100 { max-width: 100% !important; }
+.h-100  { height: 100% !important; }
+.h-auto { height: auto !important; }
+.min-vh-100 { min-height: 100vh !important; min-height: 100svh !important; }
+.vh-100     { height: 100vh !important; height: 100svh !important; }
+.min-vh-75  { min-height: 75vh !important; min-height: 75svh !important; }
+.min-vh-50  { min-height: 50vh !important; min-height: 50svh !important; }
+
+/* ---- Media ------------------------------------------------------------- */
+.object-cover   { object-fit: cover !important; width: 100%; height: 100%; }
+.object-contain { object-fit: contain !important; }
+.ratio-1x1  { aspect-ratio: 1 / 1 !important; }
+.ratio-4x3  { aspect-ratio: 4 / 3 !important; }
+.ratio-3x2  { aspect-ratio: 3 / 2 !important; }
+.ratio-16x9 { aspect-ratio: 16 / 9 !important; }
+.ratio-21x9 { aspect-ratio: 21 / 9 !important; }
+:is(.ratio-1x1, .ratio-4x3, .ratio-3x2, .ratio-16x9, .ratio-21x9) > :is(img, video, iframe) {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* ---- Hover effects (from helper.css) ---------------------------------- */
+.hover-opacity, .hover-zoom, .hover-hop, .hover-shadow, .hover-lift {
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+.hover-opacity:hover { opacity: 0.7; }
+.hover-zoom:hover    { transform: scale(1.04); }
+.hover-hop:hover     { transform: translateY(-6px); }
+.hover-lift:hover    { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.hover-shadow:hover  { box-shadow: 0 24px 20px -20px rgb(0 0 0 / 0.6); }
+
+/* ---- Accessibility & misc --------------------------------------------- */
+.visually-hidden, .sr-only {
+  position: absolute !important;
+  width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important;
+  overflow: hidden !important; clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important; border: 0 !important;
+}
+.pe-none { pointer-events: none !important; }
+.pe-auto { pointer-events: auto !important; }
+.user-select-none { user-select: none !important; }
+.cursor-pointer { cursor: pointer !important; }
+
+/* Make a whole card clickable: put .stretched-link on the main link */
+.stretched-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+
+.clearfix::after { content: ""; display: table; clear: both; }

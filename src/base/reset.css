@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Embee CSS — Reset (modern, minimal)
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+body { margin: 0; min-height: 100vh; }
+
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, pre { margin: 0; }
+
+img, picture, video, canvas, svg, iframe { display: block; max-width: 100%; }
+img, video { height: auto; }
+
+input, button, textarea, select { font: inherit; color: inherit; letter-spacing: inherit; }
+button, [role="button"], label[for], select, summary { cursor: pointer; }
+button { background: none; border: 0; padding: 0; }
+textarea { resize: vertical; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

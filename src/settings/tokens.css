@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Embee CSS — Design tokens
+   --------------------------------------------------------------------------
+   EVERYTHING visual is driven from here. To customise a site, don't edit
+   this file — copy the variables you want into your own site.css
+   (see templates/site.css) and change them there. Your file wins because
+   the framework lives in a cascade layer.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ----------------------------------------------------------------------
+     1. BRAND COLORS  (same in light + dark unless a theme overrides them)
+     ---------------------------------------------------------------------- */
+  --color-primary: #2b59c3;
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 82%, #000);
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  --color-on-primary: #ffffff;           /* text on a primary background */
+
+  --color-secondary: #4b5563;
+  --color-secondary-hover: color-mix(in srgb, var(--color-secondary) 82%, #000);
+  --color-on-secondary: #ffffff;
+
+  --color-accent: #e8a33d;
+  --color-accent-hover: color-mix(in srgb, var(--color-accent) 85%, #000);
+  --color-on-accent: #1a1a1a;
+
+  /* Status */
+  --color-success: #1f9d55;
+  --color-warning: #d98e04;
+  --color-danger:  #d63333;
+  --color-info:    #1c7ed6;
+
+  /* Fixed neutrals (don't flip with theme) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Neutral ramp (used by the surface tokens below) */
+  --gray-50:  #f8f8f9;
+  --gray-100: #f1f1f3;
+  --gray-200: #e4e4e7;
+  --gray-300: #d0d0d6;
+  --gray-400: #a1a1aa;
+  --gray-500: #71717a;
+  --gray-600: #52525b;
+  --gray-700: #3f3f46;
+  --gray-800: #27272a;
+  --gray-900: #18181b;
+  --gray-950: #0f0f11;
+
+  /* ----------------------------------------------------------------------
+     2. SURFACE / TEXT COLORS  (these flip in dark mode — see themes.css)
+     ---------------------------------------------------------------------- */
+  --color-bg:          #ffffff;           /* page background            */
+  --color-surface:     var(--gray-50);    /* cards, panels              */
+  --color-surface-2:   var(--gray-100);   /* raised / alternate panels  */
+  --color-text:        var(--gray-900);   /* body copy                  */
+  --color-text-muted:  var(--gray-600);   /* secondary copy             */
+  --color-heading:     inherit;           /* h1–h6 (inherit = text)     */
+  --color-border:      var(--gray-200);
+  --color-border-strong: var(--gray-300);
+  --color-link:        var(--color-primary);
+  --color-link-hover:  var(--color-primary-hover);
+  --color-focus:       var(--color-primary);
+  --color-selection-bg:   var(--color-primary);
+  --color-selection-text: var(--color-on-primary);
+  --color-overlay:     rgb(0 0 0 / 0.55);  /* image overlays (.cover)   */
+  --color-input-bg:    var(--color-bg);
+
+  /* ----------------------------------------------------------------------
+     3. TYPOGRAPHY
+     ---------------------------------------------------------------------- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --font-body:    var(--font-sans);
+  --font-heading: var(--font-sans);
+  --font-display: var(--font-heading);  /* .display-* and big .heading sizes */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-body: var(--font-weight-normal);
+  --font-weight-heading: var(--font-weight-semibold);
+
+  --line-height-tight: 1.1;
+  --line-height-heading: 1.2;
+  --line-height-snug: 1.4;
+  --line-height-body: 1.65;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-heading: -0.01em;
+  --letter-spacing-wide: 0.04em;
+  --letter-spacing-caps: 0.1em;
+
+  /* ---- Fluid type scale ------------------------------------------------
+     Every size grows smoothly from the small screen value to the large
+     screen value. Change these 6 numbers and the WHOLE scale updates —
+     no build step.
+       base  = body text size (in rem; 1 = 16px)
+       ratio = how much bigger each step is than the last
+     -------------------------------------------------------------------- */
+  --type-base-min: 1;        /* 16px body text on small screens  */
+  --type-base-max: 1.125;    /* 18px body text on large screens  */
+  --type-ratio-min: 1.175;   /* tighter scale on phones          */
+  --type-ratio-max: 1.25;    /* "major third" on desktops        */
+  --type-vw-min: 20;         /* fluid range starts at 320px  (rem) */
+  --type-vw-max: 90;         /* and stops growing at 1440px (rem) */
+
+  /* progress through the fluid range (0rem → 1rem). Don't edit. */
+  --_fluid: calc((100vw - var(--type-vw-min) * 1rem) / (var(--type-vw-max) - var(--type-vw-min)));
+
+  /* step values (unitless rem), built by repeated multiplication */
+  --_s0-min: var(--type-base-min);
+  --_s0-max: var(--type-base-max);
+  --_s1-min: calc(var(--_s0-min) * var(--type-ratio-min));
+  --_s1-max: calc(var(--_s0-max) * var(--type-ratio-max));
+  --_s2-min: calc(var(--_s1-min) * var(--type-ratio-min));
+  --_s2-max: calc(var(--_s1-max) * var(--type-ratio-max));
+  --_s3-min: calc(var(--_s2-min) * var(--type-ratio-min));
+  --_s3-max: calc(var(--_s2-max) * var(--type-ratio-max));
+  --_s4-min: calc(var(--_s3-min) * var(--type-ratio-min));
+  --_s4-max: calc(var(--_s3-max) * var(--type-ratio-max));
+  --_s5-min: calc(var(--_s4-min) * var(--type-ratio-min));
+  --_s5-max: calc(var(--_s4-max) * var(--type-ratio-max));
+  --_s6-min: calc(var(--_s5-min) * var(--type-ratio-min));
+  --_s6-max: calc(var(--_s5-max) * var(--type-ratio-max));
+  --_s7-min: calc(var(--_s6-min) * var(--type-ratio-min));
+  --_s7-max: calc(var(--_s6-max) * var(--type-ratio-max));
+  --_s-1-min: calc(var(--_s0-min) / var(--type-ratio-min));
+  --_s-1-max: calc(var(--_s0-max) / var(--type-ratio-max));
+  --_s-2-min: calc(var(--_s-1-min) / var(--type-ratio-min));
+  --_s-2-max: calc(var(--_s-1-max) / var(--type-ratio-max));
+
+  /* The usable sizes */
+  --step--2: clamp(var(--_s-2-min) * 1rem, var(--_s-2-min) * 1rem + (var(--_s-2-max) - var(--_s-2-min)) * var(--_fluid), var(--_s-2-max) * 1rem);
+  --step--1: clamp(var(--_s-1-min) * 1rem, var(--_s-1-min) * 1rem + (var(--_s-1-max) - var(--_s-1-min)) * var(--_fluid), var(--_s-1-max) * 1rem);
+  --step-0:  clamp(var(--_s0-min) * 1rem,  var(--_s0-min) * 1rem  + (var(--_s0-max) - var(--_s0-min)) * var(--_fluid),  var(--_s0-max) * 1rem);
+  --step-1:  clamp(var(--_s1-min) * 1rem,  var(--_s1-min) * 1rem  + (var(--_s1-max) - var(--_s1-min)) * var(--_fluid),  var(--_s1-max) * 1rem);
+  --step-2:  clamp(var(--_s2-min) * 1rem,  var(--_s2-min) * 1rem  + (var(--_s2-max) - var(--_s2-min)) * var(--_fluid),  var(--_s2-max) * 1rem);
+  --step-3:  clamp(var(--_s3-min) * 1rem,  var(--_s3-min) * 1rem  + (var(--_s3-max) - var(--_s3-min)) * var(--_fluid),  var(--_s3-max) * 1rem);
+  --step-4:  clamp(var(--_s4-min) * 1rem,  var(--_s4-min) * 1rem  + (var(--_s4-max) - var(--_s4-min)) * var(--_fluid),  var(--_s4-max) * 1rem);
+  --step-5:  clamp(var(--_s5-min) * 1rem,  var(--_s5-min) * 1rem  + (var(--_s5-max) - var(--_s5-min)) * var(--_fluid),  var(--_s5-max) * 1rem);
+  --step-6:  clamp(var(--_s6-min) * 1rem,  var(--_s6-min) * 1rem  + (var(--_s6-max) - var(--_s6-min)) * var(--_fluid),  var(--_s6-max) * 1rem);
+  --step-7:  clamp(var(--_s7-min) * 1rem,  var(--_s7-min) * 1rem  + (var(--_s7-max) - var(--_s7-min)) * var(--_fluid),  var(--_s7-max) * 1rem);
+
+  /* Friendly names for the steps */
+  --text-xs:   var(--step--2);
+  --text-sm:   var(--step--1);
+  --text-base: var(--step-0);
+  --text-lg:   var(--step-1);
+  --text-xl:   var(--step-2);
+  --text-2xl:  var(--step-3);
+  --text-3xl:  var(--step-4);
+  --text-4xl:  var(--step-5);
+  --text-5xl:  var(--step-6);
+  --text-6xl:  var(--step-7);
+
+  /* Heading sizes — reassign any of these per site */
+  --h1-size: var(--step-5);
+  --h2-size: var(--step-4);
+  --h3-size: var(--step-3);
+  --h4-size: var(--step-2);
+  --h5-size: var(--step-1);
+  --h6-size: var(--step-0);
+
+  /* ----------------------------------------------------------------------
+     4. SPACING  — one unit drives the whole scale
+     ---------------------------------------------------------------------- */
+  --space-unit: 0.25rem;   /* 4px. Bump to 0.3rem for a roomier site */
+  --space-0: 0;
+  --space-1: calc(var(--space-unit) * 1);    /*   4px */
+  --space-2: calc(var(--space-unit) * 2);    /*   8px */
+  --space-3: calc(var(--space-unit) * 3);    /*  12px */
+  --space-4: calc(var(--space-unit) * 4);    /*  16px */
+  --space-5: calc(var(--space-unit) * 6);    /*  24px */
+  --space-6: calc(var(--space-unit) * 8);    /*  32px */
+  --space-7: calc(var(--space-unit) * 10);   /*  40px */
+  --space-8: calc(var(--space-unit) * 12);   /*  48px */
+  --space-9: calc(var(--space-unit) * 16);   /*  64px */
+  --space-10: calc(var(--space-unit) * 20);  /*  80px */
+  --space-11: calc(var(--space-unit) * 24);  /*  96px */
+  --space-12: calc(var(--space-unit) * 32);  /* 128px */
+
+  /* Fluid section padding (top/bottom of .section) */
+  --space-section-sm: clamp(2rem, 1.25rem + 3.5vw, 4rem);
+  --space-section:    clamp(3rem, 1.75rem + 6vw, 7rem);
+  --space-section-lg: clamp(4rem, 2rem + 9vw, 10rem);
+
+  /* Vertical rhythm for text (.flow, .prose, paragraphs) */
+  --flow-space: 1.25em;
+
+  /* ----------------------------------------------------------------------
+     5. LAYOUT
+     ---------------------------------------------------------------------- */
+  --container-max: 80rem;          /* 1280px  .container         */
+  --container-narrow: 48rem;       /*  768px  .container-narrow  */
+  --container-wide: 90rem;         /* 1440px  .container-wide    */
+  --container-padding: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --grid-gutter: 1.5rem;           /* space between .col-* columns */
+  --measure: 68ch;                 /* comfortable line length      */
+
+  /* ----------------------------------------------------------------------
+     6. SHAPE, DEPTH, MOTION
+     ---------------------------------------------------------------------- */
+  --border-width: 1px;
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.06), 0 1px 3px rgb(0 0 0 / 0.08);
+  --shadow:    0 4px 12px rgb(0 0 0 / 0.08), 0 2px 4px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 18px 40px rgb(0 0 0 / 0.14), 0 4px 10px rgb(0 0 0 / 0.08);
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration: 250ms;
+  --duration-slow: 450ms;
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+
+  /* ----------------------------------------------------------------------
+     7. COMPONENT DEFAULTS  (handy single-knob overrides)
+     ---------------------------------------------------------------------- */
+  --btn-height: 3rem;
+  --btn-padding-x: 1.5rem;
+  --btn-radius: var(--radius-sm);
+  --btn-font-size: var(--text-sm);
+  --btn-font-weight: var(--font-weight-semibold);
+  --btn-text-transform: none;
+  --btn-letter-spacing: 0.01em;
+
+  --input-height: 3rem;
+  --input-radius: var(--radius-sm);
+  --input-border: var(--color-border-strong);
+  --input-padding-x: 0.9rem;
+
+  --card-padding: clamp(1.25rem, 0.9rem + 1.5vw, 2rem);
+  --card-radius: var(--radius-lg);
+  --card-bg: var(--color-surface);
+}

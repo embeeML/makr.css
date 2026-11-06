@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Embee CSS — Badges, tags & alerts
+   ========================================================================== */
+
+/* <span class="badge badge-primary">New</span> */
+.badge {
+  --badge-bg: var(--color-surface-2);
+  --badge-color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.3em 0.7em;
+  background: var(--badge-bg);
+  color: var(--badge-color);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.badge-primary   { --badge-bg: var(--color-primary); --badge-color: var(--color-on-primary); }
+.badge-secondary { --badge-bg: var(--color-secondary); --badge-color: var(--color-on-secondary); }
+.badge-accent    { --badge-bg: var(--color-accent); --badge-color: var(--color-on-accent); }
+.badge-soft      { --badge-bg: var(--color-primary-soft); --badge-color: var(--color-link); }
+.badge-success   { --badge-bg: var(--color-success); --badge-color: #fff; }
+.badge-warning   { --badge-bg: var(--color-warning); --badge-color: #1a1a1a; }
+.badge-danger    { --badge-bg: var(--color-danger); --badge-color: #fff; }
+
+/* Outline pill for categories / tech stacks: <span class="tag">Laravel</span> */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35em 0.85em;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  line-height: 1.2;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+a.tag:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* <div class="alert alert-success">Saved.</div> */
+.alert {
+  --alert-color: var(--color-info);
+  position: relative;
+  margin-bottom: var(--flow-space);
+  padding: var(--space-4) var(--space-5);
+  background: color-mix(in srgb, var(--alert-color) 10%, transparent);
+  border: var(--border-width) solid color-mix(in srgb, var(--alert-color) 35%, transparent);
+  border-left-width: 4px;
+  border-left-color: var(--alert-color);
+  border-radius: var(--radius-sm);
+}
+.alert > :last-child { margin-bottom: 0; }
+.alert-success { --alert-color: var(--color-success); }
+.alert-warning { --alert-color: var(--color-warning); }
+.alert-danger  { --alert-color: var(--color-danger); }
+.alert-info    { --alert-color: var(--color-info); }

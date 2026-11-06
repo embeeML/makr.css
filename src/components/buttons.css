@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Embee CSS — Buttons
+   <a class="btn btn-primary">Text</a>
+   Rolling hover (from mbm.styles) still works with the old markup:
+   <a class="btn btn-primary"><span data-hover="Let's talk">Let's talk</span></a>
+
+   Every variant is just a set of local variables, so a custom variant
+   is 4 lines:
+   .btn-brand { --btn-bg: hotpink; --btn-color: #fff; --btn-hover-bg: deeppink; }
+   ========================================================================== */
+
+.btn {
+  --btn-bg: transparent;
+  --btn-color: var(--color-text);
+  --btn-border-color: transparent;
+  --btn-hover-bg: var(--btn-bg);
+  --btn-hover-color: var(--btn-color);
+  --btn-hover-border-color: var(--btn-border-color);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: var(--btn-height);
+  padding: 0.5em var(--btn-padding-x);
+  overflow: hidden;
+  vertical-align: middle;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: var(--border-width) solid var(--btn-border-color);
+  border-radius: var(--btn-radius);
+  font-family: inherit;
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  line-height: 1.1;
+  letter-spacing: var(--btn-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  text-transform: var(--btn-text-transform);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration-fast) var(--ease);
+}
+.btn:hover {
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-color);
+  border-color: var(--btn-hover-border-color);
+}
+.btn:active { transform: translateY(1px); }
+.btn:disabled, .btn.disabled, .btn.btn-disabled, .btn[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.btn > svg, .btn > .icon { width: 1.15em; height: 1.15em; flex-shrink: 0; }
+
+/* ---- Solid variants ---------------------------------------------------- */
+.btn-primary {
+  --btn-bg: var(--color-primary);
+  --btn-color: var(--color-on-primary);
+  --btn-hover-bg: var(--color-primary-hover);
+}
+.btn-secondary {
+  --btn-bg: var(--color-secondary);
+  --btn-color: var(--color-on-secondary);
+  --btn-hover-bg: var(--color-secondary-hover);
+}
+.btn-accent {
+  --btn-bg: var(--color-accent);
+  --btn-color: var(--color-on-accent);
+  --btn-hover-bg: var(--color-accent-hover);
+}
+.btn-light {
+  --btn-bg: #ffffff;
+  --btn-color: #111111;
+  --btn-hover-bg: #ececec;
+}
+.btn-dark {
+  --btn-bg: #222222;
+  --btn-color: #ffffff;
+  --btn-hover-bg: #000000;
+}
+.btn-danger {
+  --btn-bg: var(--color-danger);
+  --btn-color: #ffffff;
+  --btn-hover-bg: color-mix(in srgb, var(--color-danger) 82%, #000);
+}
+.btn-success {
+  --btn-bg: var(--color-success);
+  --btn-color: #ffffff;
+  --btn-hover-bg: color-mix(in srgb, var(--color-success) 82%, #000);
+}
+
+/* ---- Outline variants (old names kept: btn-primary-outline …) -------- */
+.btn-outline {
+  --btn-border-color: currentColor;
+  --btn-color: var(--color-text);
+  --btn-hover-bg: var(--color-text);
+  --btn-hover-color: var(--color-bg);
+  --btn-hover-border-color: var(--color-text);
+}
+.btn-primary-outline, .btn-outline-primary {
+  --btn-border-color: var(--color-primary);
+  --btn-color: var(--color-primary);
+  --btn-hover-bg: var(--color-primary);
+  --btn-hover-color: var(--color-on-primary);
+}
+.btn-light-outline, .btn-outline-light {
+  --btn-border-color: #ffffff;
+  --btn-color: #ffffff;
+  --btn-hover-bg: #ffffff;
+  --btn-hover-color: #111111;
+}
+.btn-dark-outline, .btn-outline-dark {
+  --btn-border-color: #222222;
+  --btn-color: #222222;
+  --btn-hover-bg: #222222;
+  --btn-hover-color: #ffffff;
+}
+[data-theme="dark"] .btn-primary-outline,
+[data-theme="dark"] .btn-outline-primary { --btn-color: var(--color-link); }
+
+/* Ghost: no border until hover */
+.btn-ghost {
+  --btn-color: var(--color-text);
+  --btn-hover-bg: var(--color-primary-soft);
+}
+
+/* Text link with a line (from mbm.styles .btn-link) */
+.btn-link {
+  --btn-color: var(--color-text);
+  --btn-hover-color: var(--color-primary);
+  min-height: auto;
+  padding-inline: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+.btn-link::after {
+  content: "";
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  margin-left: 0.4em;
+  background: currentColor;
+  transition: width var(--duration) var(--ease);
+}
+.btn-link:hover::after { width: 3.5rem; }
+
+/* ---- Sizes & shapes ---------------------------------------------------- */
+.btn-sm { --btn-height: 2.25rem; --btn-padding-x: 1rem; font-size: var(--text-xs); }
+.btn-lg { --btn-height: 3.75rem; --btn-padding-x: 2.25rem; font-size: var(--text-base); }
+.btn-block { display: flex; width: 100%; }
+.btn-pill { border-radius: var(--radius-full); }
+.btn-round {
+  width: var(--btn-round-size, 6.5rem);
+  height: var(--btn-round-size, 6.5rem);
+  min-height: 0;
+  padding: 0.75rem;
+  border-radius: 50%;
+  white-space: normal;
+  line-height: 1.3;
+}
+.btn-icon { width: var(--btn-height); padding: 0; }
+
+/* ---- Rolling text hover (legacy mbm markup) --------------------------- */
+.btn > [data-hover] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  transition: transform var(--duration-slow) var(--ease);
+}
+.btn > [data-hover]::after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.btn:hover > [data-hover] { transform: translateY(-100%); }
+
+/* Group of buttons */
+.btn-group { display: inline-flex; flex-wrap: wrap; gap: var(--space-3); }

@@ -1,0 +1,49 @@
+/* ==========================================================================
+   SITE THEME — copy this file into a new project as css/site.css and load
+   it AFTER embee.min.css. Uncomment and change only what you need.
+   Because the framework sits in a cascade layer, everything here wins.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand colors ---------------------------------------------------- */
+  /* --color-primary: #2b59c3; */
+  /* --color-on-primary: #ffffff; */
+  /* --color-secondary: #4b5563; */
+  /* --color-accent: #e8a33d; */
+
+  /* ---- Light theme surfaces ------------------------------------------- */
+  /* --color-bg: #ffffff; */
+  /* --color-surface: #f8f8f9; */
+  /* --color-text: #18181b; */
+  /* --color-text-muted: #52525b; */
+  /* --color-border: #e4e4e7; */
+
+  /* ---- Fonts ---------------------------------------------------------- */
+  /* --font-body: "Inter", system-ui, sans-serif; */
+  /* --font-heading: "Playfair Display", Georgia, serif; */
+  /* --font-weight-heading: 700; */
+
+  /* ---- Type scale (whole scale updates from these) -------------------- */
+  /* --type-base-min: 1;      16px body on phones   */
+  /* --type-base-max: 1.125;  18px body on desktop  */
+  /* --type-ratio-min: 1.175; */
+  /* --type-ratio-max: 1.25;  try 1.333 for dramatic headings */
+
+  /* ---- Spacing & layout ----------------------------------------------- */
+  /* --space-unit: 0.25rem;   bump for a roomier site */
+  /* --container-max: 80rem; */
+  /* --grid-gutter: 1.5rem; */
+
+  /* ---- Shape ---------------------------------------------------------- */
+  /* --radius: 0.5rem; */
+  /* --btn-radius: var(--radius-full);   pill buttons */
+}
+
+/* Dark theme colors for this site (used with <html data-theme="dark">) */
+[data-theme="dark"] {
+  /* --color-bg: #121212; */
+  /* --color-surface: #1b1b1b; */
+  /* --color-text: #f2f2f2; */
+}
+
+/* ---- Site-specific components below ------------------------------------ */

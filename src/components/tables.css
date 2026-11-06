@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Embee CSS — Tables
+   <div class="table-responsive"><table class="table table-striped">…</table></div>
+   ========================================================================== */
+
+.table {
+  width: 100%;
+  margin-bottom: var(--flow-space);
+  font-size: var(--text-sm);
+  text-align: left;
+  border-collapse: collapse;
+  word-wrap: break-word;
+}
+.table th, .table td {
+  padding: var(--table-cell-py, 0.85em) var(--table-cell-px, 1.1em);
+  border-bottom: var(--border-width) solid var(--color-border);
+  vertical-align: top;
+}
+.table thead th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  border-bottom-color: var(--color-border-strong);
+  white-space: nowrap;
+}
+.table tfoot { background: var(--color-surface); font-weight: var(--font-weight-semibold); }
+
+.table-striped tbody tr:nth-of-type(odd) { background: color-mix(in srgb, var(--color-text) 3.5%, transparent); }
+.table-hover tbody tr:hover { background: var(--color-primary-soft); }
+.table-bordered th, .table-bordered td { border: var(--border-width) solid var(--color-border); }
+.table-sm { --table-cell-py: 0.45em; --table-cell-px: 0.7em; }
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--flow-space);
+}
+.table-responsive > .table { margin-bottom: 0; }

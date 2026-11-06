@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Embee CSS — Themes
+   --------------------------------------------------------------------------
+   Light is the default. Switch with an attribute on <html>:
+     <html data-theme="dark">   always dark
+     <html data-theme="auto">   follow the visitor's OS setting
+     <html data-theme="light">  always light (same as no attribute)
+   Can also be put on any element to make one section dark:
+     <section data-theme="dark"> … </section>
+   ========================================================================== */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg:            #121212;
+  --color-surface:       #1b1b1b;
+  --color-surface-2:     #242424;
+  --color-text:          #f2f2f2;
+  --color-text-muted:    #a3a3a3;
+  --color-border:        rgb(255 255 255 / 0.12);
+  --color-border-strong: rgb(255 255 255 / 0.24);
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 80%, #fff);
+  --color-primary-soft:  color-mix(in srgb, var(--color-primary) 20%, transparent);
+  --color-link:          color-mix(in srgb, var(--color-primary) 70%, #fff);
+  --color-link-hover:    #ffffff;
+  --color-input-bg:      transparent;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow:    0 6px 18px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 18px 60px rgb(0 0 0 / 0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    color-scheme: dark;
+    --color-bg:            #121212;
+    --color-surface:       #1b1b1b;
+    --color-surface-2:     #242424;
+    --color-text:          #f2f2f2;
+    --color-text-muted:    #a3a3a3;
+    --color-border:        rgb(255 255 255 / 0.12);
+    --color-border-strong: rgb(255 255 255 / 0.24);
+    --color-primary-hover: color-mix(in srgb, var(--color-primary) 80%, #fff);
+    --color-primary-soft:  color-mix(in srgb, var(--color-primary) 20%, transparent);
+    --color-link:          color-mix(in srgb, var(--color-primary) 70%, #fff);
+    --color-link-hover:    #ffffff;
+    --color-input-bg:      transparent;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow:    0 6px 18px rgb(0 0 0 / 0.45);
+    --shadow-lg: 0 18px 60px rgb(0 0 0 / 0.55);
+  }
+}
+
+/* A themed section repaints itself so nested data-theme works */
+[data-theme] {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}

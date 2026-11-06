@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Embee CSS — Accordion
+   Works two ways:
+
+   1) No JavaScript (recommended for new sites):
+      <div class="accordion ac-borders">
+        <details class="accordion-item">
+          <summary class="accordion-heading">Question</summary>
+          <div class="accordion-content">Answer</div>
+        </details>
+      </div>
+      Tip: give the <details> the same name="faq" to make it one-open-at-a-time.
+
+   2) Old mbm markup (.accordion-item.active / .accordion-content.is-open),
+      toggled by your theme JS or addons/embee.js.
+   ========================================================================== */
+
+.accordion { position: relative; }
+.accordion-item { position: relative; }
+
+.accordion-heading {
+  position: relative;
+  display: block;
+  padding: var(--space-5) 3.5rem var(--space-5) 0;
+  font-size: var(--accordion-title-size, var(--text-xl));
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  cursor: pointer;
+  list-style: none;
+}
+.accordion-heading::-webkit-details-marker { display: none; }
+.accordion-heading:hover { color: var(--color-primary); }
+
+/* plus / minus icon (drawn in CSS, follows text color) */
+.accordion-heading::before,
+.accordion-heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  width: 1.1rem;
+  height: 2px;
+  background: currentColor;
+  transition: transform var(--duration) var(--ease), opacity var(--duration) var(--ease);
+}
+.accordion-heading::after { transform: rotate(90deg); }
+:is(details[open], .accordion-item.active) > .accordion-heading::after { transform: rotate(0deg); opacity: 0; }
+
+/* old markup used a separate caret element — hide it, the heading draws its own */
+.accordion-caret-wrap { display: none; }
+
+.accordion-subtext {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-muted);
+}
+
+.accordion-content {
+  padding: 0 3.5rem var(--space-6) 0;
+  color: var(--color-text-muted);
+}
+.accordion-content > :last-child { margin-bottom: 0; }
+.accordion-item:not(details) > .accordion-content:not(.is-open) { display: none; }
+
+/* bordered variant (old name: ac-borders) */
+.ac-borders .accordion-item,
+.accordion-bordered .accordion-item { border-top: var(--border-width) solid var(--color-border); }
+.ac-borders .accordion-item:last-child,
+.accordion-bordered .accordion-item:last-child { border-bottom: var(--border-width) solid var(--color-border); }
+
+.ac-sm  { --accordion-title-size: var(--text-lg); }
+.ac-lg  { --accordion-title-size: var(--text-2xl); }
+.ac-xlg { --accordion-title-size: var(--text-3xl); }

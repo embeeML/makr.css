@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Embee CSS — Base element styles
+   ========================================================================== */
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.18em;
+  transition: color var(--duration-fast) var(--ease), opacity var(--duration-fast) var(--ease);
+}
+a:hover { color: var(--color-link-hover); }
+
+/* Nav/UI links usually shouldn't be underlined */
+nav a, a.btn, .link-plain { text-decoration: none; }
+
+hr {
+  height: 0;
+  margin: var(--space-7) 0;
+  border: 0;
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+::selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-text);
+  text-shadow: none;
+}
+
+/* Keyboard focus — visible, on-brand, never removed */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* Skip link for accessibility: <a class="skip-link" href="#main">Skip to content</a> */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: var(--z-toast);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; }
+
+section { position: relative; }

@@ -1,0 +1,19 @@
+{
+  "name": "embee-css",
+  "version": "1.0.0",
+  "description": "Embee Media Lab base CSS framework — tokens, fluid typography, grid, components, utilities.",
+  "private": true,
+  "type": "module",
+  "style": "dist/embee.css",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "build": "node scripts/build.mjs",
+    "release": "node scripts/build.mjs --release",
+    "legacy": "node scripts/make-legacy.mjs css-start/helper.min.css"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Embee Media Lab <matthew@embeemedialab.com>",
+  "license": "UNLICENSED"
+}

@@ -2,13 +2,13 @@
 
 A CSS framework built for creative and beautifully designed websites. 
 
-Makr.css is based off of the custom CSS I creted for my own personal website (embeemedialab.com). I needed a solid layout and easily tunable components since I change te design of my website annually (Somtimes subtle changes sometimes drastic). I eventually started building my client websites using the basic framework I created, and customizing the look and feel on top of it.  Makr.css is the result from years of fine tuning the css to make it easy to implement and fast at getting to the fun part of designing websites.
+Makr.css is based off of the custom CSS I creted for my own personal website (embeemedialab.com). I needed a solid layout and easily tunable components since I change te design of my website annually (Somtimes subtle changes sometimes drastic). I eventually started building my client websites using the basic framework I created, and customizing the look and feel on top of it.  Makr.css is the result from years of fine tuning the css to make it easy to implement and fast at getting to the fun part of designing websites. 
 
-It all started from my three stylesheets:
+It all started from my three stylesheets: 
 
-`helper.css` A plain layout grid with all the adjustment classes you could ever want.
-`mbm.styles.css` Component and select typograph styles and overides.
-`editions.css` The almost annually added, new styled components and ideas.
+`helper.css` A plain layout grid with all the adjustment classes you could ever want. 
+`mbm.styles.css` Component and select typograph styles and overides. 
+`editions.css` The almost annually added, new styled components and ideas. 
 
 From these files I standardized class names and consolidated styles to be easy to find and customize. To make it something that can be used on any project and become a part of every stacks process I added:
 

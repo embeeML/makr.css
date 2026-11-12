@@ -1,4 +1,4 @@
-# Embee CSS
+# makr.css
 
 The base CSS framework for Embee Media Lab sites. It started from the
 `helper.css` / `mbm.styles.css` / `editions.css` files of the MBM site
@@ -16,19 +16,19 @@ The base CSS framework for Embee Media Lab sites. It started from the
 
 ## Quick start (new site)
 
-1. Copy `dist/embee.min.css` (and optionally `dist/embee.js`) into the site, e.g. `public/css/`.
-   Or pin a version: `releases/v1.0.0/embee.min.css`.
+1. Copy `dist/makr.min.css` (and optionally `dist/makr.js`) into the site, e.g. `public/css/`.
+   Or pin a version: `releases/v2.0.0/makr.min.css`.
 2. Copy `templates/site.css` to `public/css/site.css`.
 3. In your layout:
 
 ```html
 <html lang="en" data-theme="light">  <!-- light | dark | auto -->
 <head>
-  <link rel="stylesheet" href="/css/embee.min.css">
+  <link rel="stylesheet" href="/css/makr.min.css">
   <link rel="stylesheet" href="/css/site.css">
 </head>
 …
-<script src="/css/embee.js" defer></script> <!-- only if you use .tabs -->
+<script src="/css/makr.js" defer></script> <!-- only if you use .tabs -->
 ```
 
 4. In `site.css`, uncomment and change the variables you need. That's it, with **no build step**.
@@ -47,13 +47,13 @@ The base CSS framework for Embee Media Lab sites. It started from the
 ```html
 <html lang="en" data-theme="dark">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700;800&display=swap">
-<link rel="stylesheet" href="/css/embee.min.css">
+<link rel="stylesheet" href="/css/makr.min.css">
 <link rel="stylesheet" href="/css/presets/mbm.min.css">
 ```
 
 ### Existing sites using the old helper classes
 
-Also load `dist/embee-legacy.min.css`. Old classes like `padding-top-sm-35`,
+Also load `dist/makr-legacy.min.css`. Old classes like `padding-top-sm-35`,
 `bg-white-accent-5`, `hide-from-md` and `text-center-from-lg` keep working, with their original breakpoints.
 
 ---
@@ -72,7 +72,7 @@ Also load `dist/embee-legacy.min.css`. Old classes like `padding-top-sm-35`,
 | `src/utilities/utilities.css` | Colors, borders, type, sizing, effects |
 | `src/generated/` | Grid columns and responsive utilities. **Generated, don't edit** |
 | `presets/` | Brand presets (`mbm.css`) |
-| `addons/` | `legacy.css` (old class names), `embee.js` (tabs/accordion helper) |
+| `addons/` | `legacy.css` (old class names), `makr.js` (tabs/accordion helper) |
 | `templates/site.css` | Starter override file for a new project |
 | `demo/index.html` | Kitchen sink. Open it in a browser to see everything (light/dark/MBM) |
 | `framework.config.mjs` | Breakpoints, columns, which responsive utilities to generate |
@@ -209,8 +209,8 @@ git push && git push --tags              # if you've connected a GitHub remote
 
 ### Using a version on a site
 
-- **Pinned (recommended):** copy `releases/v1.0.0/embee.min.css` into the site. Upgrading is a deliberate choice.
-- **Latest:** copy `dist/embee.min.css`.
+- **Pinned (recommended):** copy `releases/v2.0.0/makr.min.css` into the site. Upgrading is a deliberate choice.
+- **Latest:** copy `dist/makr.min.css`.
 
 ---
 
@@ -224,7 +224,7 @@ Requirements: Node 18+. There are no npm dependencies, so `npm install` isn't ne
 | `npm run release` | build, then copy `dist/` to `releases/v<version>/` |
 | `npm run legacy` | rebuild `addons/legacy.css` from `css-start/helper.min.css` |
 
-While developing you can also link `src/embee.css` directly. Browsers understand its `@import … layer()` lines natively.
+While developing you can also link `src/makr.css` directly. Browsers understand its `@import … layer()` lines natively.
 
 ## Fixed from the original files
 

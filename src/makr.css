@@ -1,0 +1,36 @@
+/* ==========================================================================
+   makr.css — manifest
+   --------------------------------------------------------------------------
+   The build (npm run build) inlines these into dist/makr.css. You can also
+   link THIS file directly while developing — browsers understand
+   @import … layer() natively.
+
+   Cascade layers: everything lives inside the "makr" layer, so ANY CSS you
+   write for a site (unlayered) beats the framework without needing higher
+   specificity or !important. Only utility classes use !important.
+   ========================================================================== */
+
+@layer makr.reset, makr.tokens, makr.themes, makr.base, makr.layout,
+       makr.components, makr.preset, makr.utilities, makr.legacy;
+
+@import url("base/reset.css") layer(makr.reset);
+@import url("settings/tokens.css") layer(makr.tokens);
+@import url("settings/themes.css") layer(makr.themes);
+
+@import url("base/base.css") layer(makr.base);
+@import url("base/typography.css") layer(makr.base);
+
+@import url("layout/layout.css") layer(makr.layout);
+@import url("generated/grid.css") layer(makr.layout);
+
+@import url("components/buttons.css") layer(makr.components);
+@import url("components/forms.css") layer(makr.components);
+@import url("components/tables.css") layer(makr.components);
+@import url("components/heading.css") layer(makr.components);
+@import url("components/cards.css") layer(makr.components);
+@import url("components/badges-alerts.css") layer(makr.components);
+@import url("components/accordion.css") layer(makr.components);
+@import url("components/tabs.css") layer(makr.components);
+
+@import url("utilities/utilities.css") layer(makr.utilities);
+@import url("generated/utilities.css") layer(makr.utilities);

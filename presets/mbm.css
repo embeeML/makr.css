@@ -1,19 +1,19 @@
 /* ==========================================================================
-   Embee CSS — MBM preset (Matthew Boyles Media / Embee Media Lab look)
+   makr.css — MBM preset (Matthew Boyles Media / Embee Media Lab look)
    --------------------------------------------------------------------------
    Recreates the current site's look: dark #121212, red #cc3535, Urbanist,
    19px body text, the italic in-text links.
 
-   Load AFTER embee.css and put data-theme="dark" on <html>:
+   Load AFTER makr.css and put data-theme="dark" on <html>:
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700;800&display=swap">
-     <link rel="stylesheet" href="/css/embee.min.css">
+     <link rel="stylesheet" href="/css/makr.min.css">
      <link rel="stylesheet" href="/css/presets/mbm.css">
      <html lang="en" data-theme="dark">
    ========================================================================== */
 
-@layer embee.preset {
+@layer makr.preset {
 
   @font-face {
     font-family: "Dirtbag";

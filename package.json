@@ -1,10 +1,10 @@
 {
-  "name": "embee-css",
-  "version": "1.0.0",
+  "name": "makr-css",
+  "version": "2.0.0",
   "description": "Embee Media Lab base CSS framework — tokens, fluid typography, grid, components, utilities.",
   "private": true,
   "type": "module",
-  "style": "dist/embee.css",
+  "style": "dist/makr.css",
   "scripts": {
     "generate": "node scripts/generate.mjs",
     "build": "node scripts/build.mjs",

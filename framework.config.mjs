@@ -1,5 +1,5 @@
 /**
- * Embee CSS — build configuration
+ * makr.css — build configuration
  * ---------------------------------------------------------------
  * You only need to touch this file for things CSS variables
  * CAN'T do (media-query breakpoints, number of grid columns,
@@ -10,7 +10,7 @@
  * After editing: `npm run build`
  */
 export default {
-  name: 'Embee CSS',
+  name: 'makr.css',
 
   /* Min-width breakpoints (px). Used for col-md-6, d-lg-none, mt-xl-4 … */
   breakpoints: {

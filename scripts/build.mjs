@@ -1,5 +1,5 @@
 /**
- * Embee CSS build — zero dependencies, just Node 18+.
+ * makr.css build — zero dependencies, just Node 18+.
  *
  *   npm run build     regenerate grid/utilities, bundle + minify into dist/
  *   npm run release   build, then freeze a copy in releases/v<version>/
@@ -22,7 +22,7 @@ const dist = join(root, 'dist');
 execFileSync(process.execPath, [join(root, 'scripts', 'generate.mjs')], { stdio: 'inherit' });
 
 const banner = (what) =>
-  `/*! Embee CSS v${pkg.version}${what ? ' — ' + what : ''} | Embee Media Lab | built ${new Date().toISOString().slice(0, 10)} */\n`;
+  `/*! makr.css v${pkg.version}${what ? ' — ' + what : ''} | Embee Media Lab | built ${new Date().toISOString().slice(0, 10)} */\n`;
 
 /** Inline `@import url("x") layer(name);` as `@layer name { …x… }` */
 function bundle(entry) {
@@ -71,11 +71,11 @@ const out = (name, css) => {
 mkdirSync(dist, { recursive: true });
 
 // 2. core framework
-const core = bundle(join(root, 'src', 'embee.css'));
-out('embee.css', banner() + core);
+const core = bundle(join(root, 'src', 'makr.css'));
+out('makr.css', banner() + core);
 const coreMin = banner() + minify(core);
-out('embee.min.css', coreMin);
-console.log(`dist/embee.min.css            ${kb(coreMin)}`);
+out('makr.min.css', coreMin);
+console.log(`dist/makr.min.css            ${kb(coreMin)}`);
 
 // 3. presets
 for (const f of readdirSync(join(root, 'presets')).filter((f) => f.endsWith('.css'))) {
@@ -91,14 +91,14 @@ for (const f of readdirSync(join(root, 'presets')).filter((f) => f.endsWith('.cs
 const legacyPath = join(root, 'addons', 'legacy.css');
 if (existsSync(legacyPath)) {
   const css = readFileSync(legacyPath, 'utf8');
-  out('embee-legacy.css', banner('legacy helper classes') + css);
+  out('makr-legacy.css', banner('legacy helper classes') + css);
   const m = banner('legacy helper classes') + minify(css);
-  out('embee-legacy.min.css', m);
-  console.log(`dist/embee-legacy.min.css     ${kb(m)}`);
+  out('makr-legacy.min.css', m);
+  console.log(`dist/makr-legacy.min.css     ${kb(m)}`);
 }
 
 // 5. optional JS
-copy(join(root, 'addons', 'embee.js'), join(dist, 'embee.js'));
+copy(join(root, 'addons', 'makr.js'), join(dist, 'makr.js'));
 
 // 6. release: freeze dist/ into releases/v<version>/
 if (isRelease) {

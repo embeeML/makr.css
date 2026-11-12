@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Embee CSS — Accordion
+   makr.css — Accordion
    Works two ways:
 
    1) No JavaScript (recommended for new sites):
@@ -12,7 +12,7 @@
       Tip: give the <details> the same name="faq" to make it one-open-at-a-time.
 
    2) Old mbm markup (.accordion-item.active / .accordion-content.is-open),
-      toggled by your theme JS or addons/embee.js.
+      toggled by your theme JS or addons/makr.js.
    ========================================================================== */
 
 .accordion { position: relative; }

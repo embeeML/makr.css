@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Embee CSS — Kitchen Sink</title>
+<title>makr.css — Kitchen Sink</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700;800&display=swap">
-<link rel="stylesheet" href="../dist/embee.css">
+<link rel="stylesheet" href="../dist/makr.css">
 <link rel="stylesheet" href="../dist/presets/mbm.css" id="preset-mbm" disabled>
 <style>
   /* demo-only helpers */
@@ -25,7 +25,7 @@
 
 <header class="demo-bar">
   <div class="container split" style="padding-block: var(--space-3)">
-    <strong>Embee CSS <span class="badge badge-soft">v1.0.0</span></strong>
+    <strong>makr.css <span class="badge badge-soft">v2.0.0</span></strong>
     <div class="cluster" style="--cluster-space: var(--space-2)">
       <span class="fs-xs text-muted">viewport <span id="vw"></span>px</span>
       <button class="btn btn-sm btn-outline" data-set-theme="light">Light</button>
@@ -249,13 +249,13 @@
       <div class="col-lg-6">
         <div class="heading heading-sm"><h2 class="heading-title">Accordion</h2><p class="heading-subtitle">&lt;details&gt; — no JavaScript.</p></div>
         <div class="accordion ac-borders">
-          <details class="accordion-item" name="faq" open><summary class="accordion-heading">Do I need a build step?</summary><div class="accordion-content"><p>No. Link dist/embee.min.css and override variables in your own CSS.</p></div></details>
-          <details class="accordion-item" name="faq"><summary class="accordion-heading">Does old markup still work?</summary><div class="accordion-content"><p>Yes — grid classes are the same, and embee-legacy.css covers the old helper classes.</p></div></details>
+          <details class="accordion-item" name="faq" open><summary class="accordion-heading">Do I need a build step?</summary><div class="accordion-content"><p>No. Link dist/makr.min.css and override variables in your own CSS.</p></div></details>
+          <details class="accordion-item" name="faq"><summary class="accordion-heading">Does old markup still work?</summary><div class="accordion-content"><p>Yes — grid classes are the same, and makr-legacy.css covers the old helper classes.</p></div></details>
           <details class="accordion-item" name="faq"><summary class="accordion-heading">How are versions handled?</summary><div class="accordion-content"><p>Each release is frozen in releases/vX.Y.Z and tagged in git.</p></div></details>
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="heading heading-sm"><h2 class="heading-title">Tabs</h2><p class="heading-subtitle">Uses the optional embee.js.</p></div>
+        <div class="heading heading-sm"><h2 class="heading-title">Tabs</h2><p class="heading-subtitle">Uses the optional makr.js.</p></div>
         <div class="tabs tabs-minimal">
           <div class="tabs-buttons"><ul>
             <li><button class="tab-btn active" data-tab="t1">Design</button></li>
@@ -288,7 +288,7 @@
   </div>
 </footer>
 
-<script src="../dist/embee.js" defer></script>
+<script src="../dist/makr.js" defer></script>
 <script>
   const html = document.documentElement, preset = document.getElementById('preset-mbm');
   const vw = () => (document.getElementById('vw').textContent = innerWidth);

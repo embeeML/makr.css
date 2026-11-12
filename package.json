@@ -15,5 +15,5 @@
     "node": ">=18"
   },
   "author": "Matthew Boyles <matthew@embeemedialab.com>",
-  "license": "UNLICENSED"
+  "license": "MIT"
 }

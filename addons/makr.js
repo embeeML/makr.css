@@ -1,5 +1,5 @@
 /*! makr.css — optional helper JS (~1 KB). Only needed for .tabs and the
-    old-style (non-<details>) .accordion markup. Load with:
+    old-style (non-<details>) .accordion markup. from embeemedialab website Load with:
     <script src="/js/makr.js" defer></script> */
 (() => {
   // Tabs: .tab-btn[data-tab="id"] toggles .tab-content#id

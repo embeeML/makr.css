@@ -22,7 +22,7 @@ const dist = join(root, 'dist');
 execFileSync(process.execPath, [join(root, 'scripts', 'generate.mjs')], { stdio: 'inherit' });
 
 const banner = (what) =>
-  `/*! makr.css v${pkg.version}${what ? ' — ' + what : ''} | Embee Media Lab | built ${new Date().toISOString().slice(0, 10)} */\n`;
+  `/*! makr.css v${pkg.version}${what ? ' — ' + what : ''} | Matthew Boyles Media | built ${new Date().toISOString().slice(0, 10)} */\n`;
 
 /** Inline `@import url("x") layer(name);` as `@layer name { …x… }` */
 function bundle(entry) {

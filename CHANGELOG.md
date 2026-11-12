@@ -3,6 +3,11 @@
 All notable changes to makr.css. Versions follow [semver](https://semver.org):
 patch = fixes, minor = additions, major = breaking changes.
 
+## [2.0.1] — 2026-11-12
+
+### Changed
+- Branding in file banners, README, demo and package info is now Matthew Boyles Media (author: Matthew Boyles). No CSS changes.
+
 ## [2.0.0] — 2026-11-12
 
 Project renamed to **makr.css**. Nothing about the CSS itself changed.

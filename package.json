@@ -1,7 +1,7 @@
 {
   "name": "makr-css",
-  "version": "2.0.0",
-  "description": "Embee Media Lab base CSS framework — tokens, fluid typography, grid, components, utilities.",
+  "version": "2.0.1",
+  "description": "Matthew Boyles Media base CSS framework — tokens, fluid typography, grid, components, utilities.",
   "private": true,
   "type": "module",
   "style": "dist/makr.css",
@@ -14,6 +14,6 @@
   "engines": {
     "node": ">=18"
   },
-  "author": "Embee Media Lab <matthew@embeemedialab.com>",
+  "author": "Matthew Boyles <matthew@embeemedialab.com>",
   "license": "UNLICENSED"
 }

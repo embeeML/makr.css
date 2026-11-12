@@ -1,6 +1,6 @@
 # makr.css
 
-The base CSS framework for Embee Media Lab sites. It started from the
+The base CSS framework for Matthew Boyles Media sites. It started from the
 `helper.css` / `mbm.styles.css` / `editions.css` files of the MBM site
 (originals kept in `css-start/` for reference) and adds:
 

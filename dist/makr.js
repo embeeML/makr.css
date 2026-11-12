@@ -1,4 +1,4 @@
-/*! makr.css — optional helper JS (~1 KB). Only needed for .tabs and the
+/*! makr.css — optional helper JS (~1 KB). Only needed  for .tabs and the
     old-style (non-<details>) .accordion markup. Load with:
     <script src="/js/makr.js" defer></script> */
 (() => {

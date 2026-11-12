@@ -1,7 +1,7 @@
 /**
  * Generates src/generated/grid.css and src/generated/utilities.css
  * from framework.config.mjs. Run via `npm run build` (or `npm run generate`).
- * Don't hand-edit the generated files — they get overwritten.
+ * Don't hand-edit the generated files — they will get overwritten.
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';

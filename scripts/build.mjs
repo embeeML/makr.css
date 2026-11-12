@@ -1,5 +1,5 @@
 /**
- * makr.css build — zero dependencies, just Node 18+.
+ * makr.css build — just needs Node 18+.
  *
  *   npm run build     regenerate grid/utilities, bundle + minify into dist/
  *   npm run release   build, then freeze a copy in releases/v<version>/

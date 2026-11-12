@@ -1,6 +1,5 @@
 /**
  * Builds addons/legacy.css from the OLD helper.min.css so existing markup
- * (padding-top-sm-35, bg-white-accent-5, hide-from-md, text-center-from-lg …)
  * keeps working on top of makr.css.
  *
  *   node scripts/make-legacy.mjs css-start/helper.min.css

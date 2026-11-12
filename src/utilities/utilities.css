@@ -1,7 +1,7 @@
 /* ==========================================================================
-   makr.css — Utilities (non-responsive)
+   makr.css — utilities (non-responsive)
    Responsive ones (d-md-none, mt-lg-6 …) are in generated/utilities.css.
-   Utilities use !important so they always win over component styles.
+   utilities use !important so they always win over component styles.
    ========================================================================== */
 
 /* ---- Text color -------------------------------------------------------- */

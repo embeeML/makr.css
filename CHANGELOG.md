@@ -6,22 +6,17 @@ patch = fixes, minor = additions, major = breaking changes.
 ## [2.0.1] — 2026-11-12
 
 ### Changed
-- Branding in file banners, README, demo and package info is now Matthew Boyles Media (author: Matthew Boyles). No CSS changes.
+- Updated comments for better instruction and added/changed demo html page
 
-## [2.0.0] — 2026-11-12
 
-Project renamed to **makr.css**. Nothing about the CSS itself changed.
-Class names, variables and how things look are the same. It's a major
-version because the file and layer names changed:
+## [2.0.0] — 2026-11-06
+
+Pre-release, built from the same starting css used to build my personal website embeemedialab.com using the original `helper.css`, `mbm.styles.css` and `editions.css`.
 
 ### Changed
 - Files are now `makr.css`, `makr.min.css`, `makr-legacy.css` and `makr.js`.
 - Cascade layers are now `makr.*` (e.g. `@layer makr.components`).
 - Package name is now `makr-css`.
-
-## [1.0.0] — 2026-11-06
-
-First release, built from the MBM site's `helper.css`, `mbm.styles.css` and `editions.css`.
 
 ### Added
 - Design tokens (`src/settings/tokens.css`) for colors, fonts, type, spacing, layout, radius, shadows, motion and component defaults.

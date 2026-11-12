@@ -1,16 +1,24 @@
 # makr.css
 
-The base CSS framework for Matthew Boyles Media sites. It started from the
-`helper.css` / `mbm.styles.css` / `editions.css` files of the MBM site
-(originals kept in `css-start/` for reference) and adds:
+A CSS framework built for creative and beautifully designed websites. 
+
+Makr.css is based off of the custom CSS I creted for my own personal website (embeemedialab.com). I needed a solid layout and easily tunable components since I change te design of my website annually (Somtimes subtle changes sometimes drastic). I eventually started building my client websites using the basic framework I created, and customizing the look and feel on top of it.  Makr.css is the result from years of fine tuning the css to make it easy to implement and fast at getting to the fun part of designing websites.
+
+It all started from my three stylesheets:
+
+`helper.css` A plain layout grid with all the adjustment classes you could ever want.
+`mbm.styles.css` Component and select typograph styles and overides.
+`editions.css` The almost annually added, new styled components and ideas.
+
+From these files I standardized class names and consolidated styles to be easy to find and customize. To make it something that can be used on any project and become a part of every stacks process I added:
 
 - **CSS variables for everything.** Colors, fonts, type scale, spacing, radius and shadows.
 - **Fluid, responsive typography.** It scales smoothly from 320px to 1440px. Change 4 numbers to re-tune the whole scale.
-- **Light and dark themes.** Plus an **MBM preset** that recreates the current site's look.
+- **Light and dark themes.** Plus an **MBM preset** that recreates my current site's look.
 - **The same grid class names as before** (`row`, `col-md-6`, `offset-lg-2`…), with working gutters.
 - **Layout primitives** (`auto-grid`, `with-sidebar`, `switcher`, `stack`, `cluster`). These handle most layouts with one class and no breakpoints.
-- **Cascade layers.** Your site CSS always wins without `!important`.
-- **Versioned releases.** Each one is frozen in `releases/vX.Y.Z/` and tagged in git.
+- **Cascade layers.** Every new projects custom CSS always wins without needing to use `!important`.
+- **Versioned releases.** Each one is frozen in `releases/vX.Y.Z/` and tagged in git. So each project can live on as it is.
 
 ---
 

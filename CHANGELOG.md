@@ -5,19 +5,16 @@ patch = fixes, minor = additions, major = breaking changes.
 
 ## [2.0.0] — 2026-11-12
 
-Renamed from **Embee CSS** to **makr.css**. Nothing about the CSS itself changed.
+Project renamed to **makr.css**. Nothing about the CSS itself changed.
 Class names, variables and how things look are the same. It's a major
-version because the file and layer names changed, which breaks existing `<link>` tags:
+version because the file and layer names changed:
 
 ### Changed
-- Files: `embee.css` / `embee.min.css` / `embee-legacy.css` / `embee.js` → `makr.css` / `makr.min.css` / `makr-legacy.css` / `makr.js`.
-- Cascade layers: `embee.*` → `makr.*` (e.g. `@layer makr.components`). Update any site CSS that refers to the layer names.
-- Package name: `embee-css` → `makr-css`.
+- Files are now `makr.css`, `makr.min.css`, `makr-legacy.css` and `makr.js`.
+- Cascade layers are now `makr.*` (e.g. `@layer makr.components`).
+- Package name is now `makr-css`.
 
-### Upgrading from 1.0.0
-Rename the files in your `<link>`/`<script>` tags. If your site CSS doesn't reference `@layer embee…`, nothing else is needed.
-
-## [1.0.0] — 2026-11-06 (released as "Embee CSS")
+## [1.0.0] — 2026-11-06
 
 First release, built from the MBM site's `helper.css`, `mbm.styles.css` and `editions.css`.
 

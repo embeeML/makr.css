@@ -1,7 +1,7 @@
 /**
  * makr.css — build configuration
  * ---------------------------------------------------------------
- * You only need to touch this file for things CSS variables
+ * You only need to touch this file for things CSS variables 
  * CAN'T do (media-query breakpoints, number of grid columns,
  * which utility classes get generated). Colors, fonts, type scale
  * and spacing sizes are all CSS variables — change those in your
